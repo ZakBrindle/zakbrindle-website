@@ -1,0 +1,254 @@
+#container {
+    display: flex;
+     user-select: none;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+  }
+  
+  .column {
+    flex: 1;
+    
+    padding: 20px;
+    min-height: 300px;
+    background-color: #000f1e;
+    width: 100px;
+    
+      border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    
+     padding-left: 30px;
+  
+     position: relative;
+  }
+  
+  .column2 {
+    flex: 1;
+    
+    padding: 20px;
+    min-height: 300px;
+    background-color: #CB5E03;
+    width: 100px;
+    
+     border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    
+     padding-left: 30px;
+  
+     position: relative;
+  }
+  
+  .item {
+    padding: 10px;  
+    margin-bottom: 10px;
+    
+    cursor: hand;
+    background-color: #000f1e;
+    border-radius: 4px;
+    color: #d7e7f7;
+    
+      
+  }
+
+  .item img {
+    position: absolute;
+   margin-left: 150px;
+   margin-top: 25px;
+    transform: translate(-50%, -50%) scale(0.14);
+  }
+  
+
+  .item-child {
+    padding: 5px;  
+    margin-top: -15px;
+    cursor: hand;
+    background-color: #000f1e00;
+    border-radius: 4px;
+    color: #adadad93;
+    padding-left: 12px;
+    
+    font-size: 10px;
+  }
+  
+  .item:hover {
+    background-color: #6e8296;
+  }
+  .item, h2 {
+    font-size: 18px;
+    color: #d7e7f7;  
+  }
+  
+  .item.disabled {
+      color: gray;
+      pointer-events: none;
+  }
+  
+  #createModelBtn { 
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    width: 56px; 
+    height: 56px; 
+    border-radius: 50%; 
+  
+    color: #00012b;
+  }
+  
+  #container h2 {
+    text-align: left;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-left: -8px;
+    margin-top: -18px;
+    padding: 5px 0;
+    color: #f0be34;  
+  }
+  
+  #container h3 {
+    text-align: left;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-left: -8px;
+    margin-top: -18px;
+    padding: 5px 0;
+    color: #ffffff;  
+  }
+  
+  #container h5 {
+    text-align: left;
+    font-size: 17px;  
+    margin-bottom: 0px;
+    margin-left: -8px;
+    margin-top: -18px;
+    padding: 5px 0;
+      color: #f0be34; 
+  }
+  
+  button.fa-copy {
+      font-size: 1.5em;
+      color: #000000;
+      background: transparent;
+      border: none;
+  }
+  
+  .column-label {
+     position: absolute;
+    left: -60px;
+    top: 30%;
+    transform: rotate(-90deg);
+    transform-origin: top center;
+    font-size: 32px;
+    color: #d7e7f7;
+   
+  }
+  
+  #heading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+ 
+  #heading-container img {
+  margin-right: 10px;
+  }
+  
+  .percentageCost {
+      position: absolute;
+      bottom: 0;
+      left: 50%; /* to center the element horizontally */
+      transform: translateX(-50%); /* to center the element horizontally */
+      font-size: 50px;
+    color: #d7e7f7;
+    bottom: -40;
+  }
+
+  .contactUs {
+    position: absolute;
+    bottom: -10;
+    font-size: 20px;
+    color: #d7e7f7;
+}
+  
+  .freeReplacement {
+      position: absolute;
+      bottom: 0;
+      left: 50%; /* to center the element horizontally */
+      transform: translateX(-50%); /* to center the element horizontally */
+      font-size: 15px;
+    color: #d7e7f7;
+    bottom: -25;
+  }
+  
+  #column5 input {
+    background-color: #CB5E03;
+    color: white;
+    position: absolute;
+    top: 10;
+    right: 10;
+    width: 105px; /* adjust as needed */
+    font-size: 35;
+    border: none; /* remove border */
+    text-align: right;
+   
+  }
+
+ 
+
+  
+  .floating-box {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #fff;
+    border-radius: 30px 30px 30px 30px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    padding-right:15px;
+    display: flex;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    width: 550px;
+    overflow: hidden;
+}
+
+
+  .floating-box .icon {
+    width: 50px;
+    height: 50px;
+    background-color: #FFD700;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    max-width: 50px;
+    max-height: 50px;
+  }
+  
+  .floating-box .icon img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .floating-box h3 {
+    margin: 0;    
+    margin-bottom: -10px; /* add some margin to the bottom */
+    font-weight: bold;
+  }
+  
+  .floating-box p {
+    margin: 10px 0 0 0;
+  }
+ 

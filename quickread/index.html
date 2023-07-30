@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quick Read</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+  
+    <div id="heading-container">
+      <img width="7%" height="7%" src="https://icon-library.com/images/summarize-icon/summarize-icon-9.jpg" alt="Logo">
+      &nbsp;&nbsp;&nbsp; <h1>Quick Read</h1>
+    </div>
+    <form>
+      <div>
+        <label>Enter article text</label><br>
+        <textarea id="prompt" rows="14" cols="150" wrap="soft"></textarea>
+      </div>
+      <div>
+        <label for="checkbox_2">2 Sentances</label>
+        <input type="radio" id="checkbox_2" name="sentances" checked>
+      </div>
+      <div>
+        <label for="checkbox_4">4 Sentances</label>
+        <input type="radio" id="checkbox_4" name="sentances">
+      </div>
+      
+      <div>
+        <button id="quickReadbtn">Quick Read</button>
+      </div>
+    </form>
+    <p id="result-element"></p>
+    <div id="overview">
+     
+    </div>
+
+
+<script src="./quickRead.js"></script>
+
+  </body>
+</html>

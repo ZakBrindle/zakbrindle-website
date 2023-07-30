@@ -1,0 +1,121 @@
+.file-upload {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .custom-file-upload {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+  }
+  
+  .custom-file-upload:hover {
+    background-color: #f0f0f0;
+  }
+  
+
+
+
+  #audioFileInput {
+    margin-bottom: 10px;
+}
+
+#transcript-container {
+  display: grid;
+  grid-template-rows: auto;
+}
+
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-container {
+  margin-right: 10px; /* Adjust the margin as desired */
+}
+
+.dropdown-container {
+  flex-grow: 1;
+}
+
+
+
+#seeMoreTip {
+  overflow: hidden;
+  text-align: center;
+  color: lightgrey;
+  top: -10px;
+  position: relative;
+}
+
+#transcriptOutput {
+margin-top: 20px;
+padding: 10px;
+border: 1px solid #ddd;
+background-color: #f9f9f9;
+
+}
+
+.output-field {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  max-height: 290px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+#AIOutput {
+margin-top: 20px;
+padding: 10px;
+border: 1px solid #ddd;
+background-color: #f9f9f9;
+
+}
+
+#dropdownContainer {
+margin-bottom: 10px;
+}
+
+#dropdownSelect {
+height: 20px;
+font-size: 16px;
+}
+
+
+#ai-app {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.output-field {
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+
+.left-aligned {
+  text-align: left;
+  position: relative;
+  color: darkgrey;
+  font-style: italic;
+  left: 15px;
+  top: 10px;
+}
+
+#callCompanion_AIOutput {
+  white-space: pre-line;
+}
+
+.ai-status {
+  color: #381175af;
+  font-size: 20px;
+  text-align: right;
+  font-style: italic;
+  top: -50px;
+  
+  position: relative;
+}

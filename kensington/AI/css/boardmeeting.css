@@ -1,0 +1,33 @@
+ul#sortlist {
+    list-style: none;
+  }
+  
+  ul#sortlist li {
+    position: relative;
+    padding: 10px 30px 10px 50px;
+    margin-bottom: 10px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    background-color: transparent;
+  }
+  
+  ul#sortlist li .remove {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+  }
+  
+  ul#sortlist li .remove:hover {
+    color: darkred;
+  }
+  
+  #consultant-name-label {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: medium;
+    color: grey;
+  }
