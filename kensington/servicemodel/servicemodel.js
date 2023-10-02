@@ -397,7 +397,6 @@ document.addEventListener("DOMContentLoaded", function() {
   });
   
 
-
   document.addEventListener('DOMContentLoaded', function () {
     // Get the image element and video-container div
     const kaLogo = document.getElementById('ka_logo');
@@ -406,7 +405,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Add click listener to the logo image
     kaLogo.addEventListener('click', function () {
       // Toggle image source based on whether the current src includes the name of each image
-      if (kaLogo.src.includes('2018 - Kensington Additive Logo - white version.png')) {
+      if (kaLogo.src.includes('white')) {
         kaLogo.src = './images/2018 - Kensington Additive Logo.png';
         // Hide the video-container
         videoContainer.setAttribute('hidden', '');
