@@ -125,9 +125,9 @@
   #container h5 {
     text-align: left;
     font-size: 17px;  
-    margin-bottom: 0px;
+    margin-bottom: -20px;
     margin-left: -8px;
-    margin-top: -18px;
+    margin-top: 30px;
     padding: 5px 0;
       color: #f0be34; 
   }
@@ -152,15 +152,25 @@
   
   #heading-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: space-between;
     text-align: center;
-  }
+    padding: 30px;  /* Adjust the padding according to your layout */
+}
 
- 
-  #heading-container img {
-  margin-right: 10px;
-  }
+#ka_logo {
+    height: 60px;  /* 20% smaller than the original 130px */
+    margin-top: -30px;
+    margin-left: 10px;
+    flex-shrink: 0;  /* Prevents the logo from shrinking */
+}
+
+#imageLogo {
+    height: 60px;  /* Set the height you prefer */
+    margin-top: -30px;
+    margin-right: 10px;
+    flex-shrink: 0;  /* Prevents the logo from shrinking */
+}
   
   .percentageCost {
       position: absolute;
@@ -209,10 +219,10 @@
     position: fixed;
     bottom: 20px;
     left: 20px;
-    background-color: #fff;
-    border-radius: 30px 30px 30px 30px;
+    background-color: #e2e2e2;
+    border-radius: 50px 50px 50px 50px;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
-    padding: 10px;
+    padding: 4px;
     padding-right:15px;
     display: flex;
     align-items: center;
@@ -252,3 +262,44 @@
     margin: 10px 0 0 0;
   }
  
+
+
+
+
+  body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+
+.video-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 0, 104, 0.932);  
+  z-index: 1;
+}

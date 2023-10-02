@@ -167,11 +167,23 @@ for (var i = 0; i < items.length; i++) {
 
 // we want to let the user change the client logo (right image) - if you refresh the page, it gets the last image you selected.
 // the image url is stored in localstorage. Get this item and set the .src of client image
+if(localStorage.getItem("imageURL_clientLogo") != null)
+{
   document.getElementById("imageLogo").src = localStorage.getItem("imageURL_clientLogo");
+  if(localStorage.getItem("imageURL_clientLogo") === "null")
+  {
+    document.getElementById("imageLogo").src = "https://iili.io/H0MC0ua.th.png";
+    localStorage.setItem("imageURL_clientLogo", "https://iili.io/H0MC0ua.th.png"); // save url
+  }
+  console.log(localStorage.getItem("imageURL_clientLogo"))
+}
+else
+{
+  document.getElementById("imageLogo").src = "https://iili.io/H0MC0ua.th.png";
+}
   
 // add a listener. If the user click the client logo, they will be given a prompt. Run getURL function
 document.getElementById("imageLogo").addEventListener("click", getURL);
-
 // take a url, set client image source to this url, and save selected url to localstorage.
 function getURL() {
   var newURL = prompt("Please enter a new image URL:");//prompt
@@ -180,7 +192,15 @@ function getURL() {
     //not empty
     document.getElementById("imageLogo").src = newURL;  // set source
     localStorage.setItem("imageURL_clientLogo", newURL); // save url
+    if(localStorage.getItem("imageURL_clientLogo") === "null")
+    {
+      document.getElementById("imageLogo").src = "https://iili.io/H0MC0ua.th.png";
+      localStorage.setItem("imageURL_clientLogo", "https://iili.io/H0MC0ua.th.png"); // save url
+    }
   }
+ 
+  
+  
 }
 
 
@@ -317,11 +337,18 @@ items.forEach(item => {
 
 
 // ON CLICK, HIDE THE TIP BOX
-var tipOn = true;
+var tipOn = false;
 
 document.addEventListener("DOMContentLoaded", function() {
     // Get the element with the id "bulb-icon"
     const bulbIcon = document.getElementById("tip-box");
+
+
+    //default off
+    tipOn = false;
+          const tipBoxContent = document.getElementById("tip-box-content");
+          tipBoxContent.hidden = true;
+          document.querySelector(".floating-box").style.width = "45px";
   
     // Check if the element exists
     if (bulbIcon) {
@@ -369,3 +396,28 @@ document.addEventListener("DOMContentLoaded", function() {
     tipInfo.textContent = 'Highlight a feature to learn more about its benefits.';
   });
   
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Get the image element and video-container div
+    const kaLogo = document.getElementById('ka_logo');
+    const videoContainer = document.querySelector('.video-container');
+  
+    // Add click listener to the logo image
+    kaLogo.addEventListener('click', function () {
+      // Toggle image source based on whether the current src includes the name of each image
+      if (kaLogo.src.includes('2018 - Kensington Additive Logo - white version.png')) {
+        kaLogo.src = './images/2018 - Kensington Additive Logo.png';
+        // Hide the video-container
+        videoContainer.setAttribute('hidden', '');
+      } else {
+        kaLogo.src = './images/2018 - Kensington Additive Logo - white version.png';
+        // Un-hide the video-container
+        videoContainer.removeAttribute('hidden');
+      }
+    });
+  });
+  
+  
+
+
