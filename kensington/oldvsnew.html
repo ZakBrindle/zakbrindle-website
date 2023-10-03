@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Full-Screen Video</title>
+  <style>
+    /* CSS to make the video take up the entire screen */
+    body, html {
+      margin: 0;
+      padding: 0;
+    }
+    #videoElement {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -100;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <!-- HTML Video Element -->
+  <video id="videoElement" autoplay muted>
+    <source src="https://firebasestorage.googleapis.com/v0/b/kensington-video.appspot.com/o/KA_Website_Old_vs_New.mp4?alt=media&token=5669176d-2c21-43dd-9d7c-3679bc10539e" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <script>
+    // JavaScript to make the video play in full-screen
+    document.addEventListener("DOMContentLoaded", function() {
+      var videoElement = document.getElementById("videoElement");
+      videoElement.play();
+
+      // Request full-screen mode
+      if (videoElement.requestFullscreen) {
+        videoElement.requestFullscreen();
+      } else if (videoElement.mozRequestFullScreen) { // Firefox
+        videoElement.mozRequestFullScreen();
+      } else if (videoElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
+        videoElement.webkitRequestFullscreen();
+      } else if (videoElement.msRequestFullscreen) { // IE/Edge
+        videoElement.msRequestFullscreen();
+      }
+    });
+  </script>
+</body>
+</html>
