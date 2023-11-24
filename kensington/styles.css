@@ -1,0 +1,317 @@
+/* Basic Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { font-family: 'Arial', sans-serif; }
+
+header {
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space out logo, nav, and icons */
+    background-color: #ffffff0a; /* Semi-transparent white background */
+    padding: 10px 0; /* Adjust the padding to increase the height of the header */
+    height: 80px;
+    position: fixed; /* Make header fixed at the top */
+    width: 100%; /* Ensure the header spans the full width */
+    top: 0;
+    left: 0;
+    z-index: 10; /* Higher z-index to keep the header above other content */
+}
+
+.logo-container {
+    flex: 0 0 auto; /* Do not grow or shrink, just be the size of the logo */
+}
+
+nav {
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Align the logo, nav, and icons */
+    align-items: center;
+    height: 100%; /* Full height of the header */
+    width: 100%; /* Ensure nav element spans the full width */
+}
+
+nav .menu-container {
+    display: flex;
+    justify-content: center; /* Center the menu items */
+    align-items: center;
+    flex-grow: 1; /* Allow the nav list to grow and fill space */
+}
+
+nav .menu-container ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Center the menu items */
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    padding: 0 15px; /* Adjust spacing between menu items */
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(230, 230, 230);
+    font-size: 18px; /* Adjust if needed */
+    padding: 32px 25px; /* Increase padding for taller and wider buttons */
+    display: inline-block; /* Ensures padding affects the element properly */
+    overflow: hidden; /* Keeps pseudo-elements within bounds */
+    position: relative; /* For absolute positioning of pseudo-elements */
+    transition: color 0.3s, transform 0.3s; /* Transition for color and transform */
+    transform-origin: center; /* Ensure scaling happens from the center */
+    border-radius: 4px; /* Optional: for rounded corners */
+    
+  }
+  
+  nav a::before {
+    content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #001847; /* Dark blue color */
+  transform: scaleX(0); /* Start with an X scale of 0 */
+  transform-origin: left; /* Transform origin on the left */
+  transition: transform 0.3s ease-out; /* Transition for transform effect */
+  z-index: -1; /* Place pseudo-element behind text */
+  }
+  
+  nav a:hover::before {
+    transform: scaleX(1); /* Scale to full width on hover */
+  }
+  
+  nav a:hover {
+    color: white; /* Change text color to white on hover */
+  }
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icons a {
+    padding: 0 15px;
+}
+
+.nav-icons a img {
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+}
+
+.nav-icons a:hover {
+    background-color: #E85C0E; /* Change background color to orange */
+    color: white; /* Change text color to white, if your icons have a text color */
+    border-radius: 50%; /* Keep the rounded shape on hover for icon buttons */
+  }
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blue-filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(14, 54, 124, 0.651); /* Blue color filter */
+    z-index: 1;
+}
+
+.central-message {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: white;
+    text-align: center;
+}
+
+
+
+.floating-buttons {
+    margin-left: 15px;
+    position: fixed; /* Fixed position to the viewport */
+    left: 0; /* Align to the left side of the viewport */
+    top: 75%; /* Center vertically to the screen */
+    transform: translateY(-50%); /* Adjust the vertical centering */
+    z-index: 100; /* Ensure it's above other content */
+  }
+  
+  .floating-button {
+    display: block; /* Stack the links */
+    margin-bottom: 20px; /* Increase space between buttons */
+  }
+  
+  .floating-button img {
+    display: block; /* Remove any default image inline spacing */
+    width: 40px; /* 80% of the original size */
+    height: 40px; /* 80% of the original size */
+  }
+  
+  /* Other styles... */
+  
+
+
+
+
+.tab-search-container {
+    max-width: 600px; /* Match the search box width */
+    margin: auto; /* Center the container */
+  }
+  
+  .tab-container {
+    display: flex;
+    justify-content: center; /* Center the tabs if there's extra space on the sides */
+    margin-bottom: -20.5px; /* Ensure no gap between tabs and search box */
+    margin-right: 170px;
+  }
+  
+  .tab {
+    background-color: #00277a;
+    border: 0px solid #ccc;
+  border-bottom: none; /* Remove the bottom border to blend with the search box */
+  padding: 10px 20px;
+  margin: 0 0px; /* Adjust spacing between the tabs if necessary */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  
+  font-size: 18px; /* Increase font size */
+  font-weight: bold; /* Make font bold */
+  
+  /* If you also want to adjust the vertical alignment when font size is changed: */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px; /* You can set a fixed height to ensure all tabs are the same size */
+    color: #5e5e5e;
+  }
+  
+  /* Apply the same border-radius to the first and last tabs to match the search box */
+  .tab:first-child {
+    border-top-left-radius: 12px;
+  }
+  
+  .tab:last-child {
+    border-top-right-radius: 12px;
+  }
+
+
+.search-box {
+    margin-top: 20px; /* Space above the search box */
+    padding: 10px; /* Reduced padding inside the search box */
+    background-color: rgb(255, 255, 255); /* White background */
+    border-radius: 25px; /* Rounded corners */
+    display: flex; /* Use flexbox for inner items */
+    align-items: center; /* Center the items vertically */
+    justify-content: space-between; /* Align items from end to end */
+    max-width: 600px; /* Maximum width of the search box */
+    margin: 20px auto; /* Center the search box */
+}
+
+.search-box input[type="text"] {
+    margin-right: 5px; /* Spacing between the inputs and the button */
+    padding: 10px; /* Padding inside the inputs */
+    border: 2px solid #fff; /* Border for inputs */
+    border-radius: 15px; /* Rounded corners for inputs */
+    flex-grow: 1; /* Inputs will grow to fill available space */
+}
+
+.search-box button {
+    padding: 10px 20px; /* Padding inside the button */
+    background-color: #E85C0E; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* No border for button */
+    border-radius: 15px; /* Rounded corners for button */
+    cursor: pointer; /* Cursor for button */
+    flex-grow: 2; /* Button will grow twice as much as inputs */
+    white-space: nowrap; /* Prevents text in the button from wrapping */
+}
+
+footer {
+    /* Add styles for footer here */
+}
+
+@media (max-width: 768px) {
+    /* Responsive styles */
+    nav .menu-container, nav .nav-icons {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    nav li, .nav-icons a {
+        margin: 5px 0;
+    }
+
+    .central-message {
+        font-size: 14px; /* Adjust the font size for smaller screens */
+    }
+
+    .search-box input[type="text"], .search-box button {
+        font-size: 14px; /* Adjust the font size for smaller screens */
+    }
+}
+
+
+
+/* ... existing CSS ... */
+
+.job-tiles-wrapper {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  left: 0;  
+  transform: translateY(-50%); 
+  z-index: 2; 
+}
+  .job-tile {
+    width: 30%; 
+    height: 110px;
+    margin: 0 10px; 
+    background-color: #f9f9f9;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+    border-radius: 8px; 
+    text-align: left;
+    transition: box-shadow 0.3s; 
+  }
+  
+  .job-tile:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
+  }
+  
+  .job-tile h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem; 
+    font-weight: bold; 
+  }
+  
+  .job-tile p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .map-section {
+    background-color: #002366; 
+    height: 300px; 
+    
+  }
+  
+ 
+  
