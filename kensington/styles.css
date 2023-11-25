@@ -363,3 +363,156 @@ footer {
     font-weight: bold; 
     margin-bottom: -10px;
   }
+
+
+/* Interactive Tab Styles */
+.interactive-tab-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  z-index: 1000; /* Make sure this is above all other content */
+  width: 440px; /* Set a fixed width for the container */
+  padding-right: 80px; 
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center-align children */
+  justify-content: flex-end; /* Align children to the bottom */
+  transition: height 0.3s ease; /* Animate height changes */
+  
+}
+
+.interactive-tab {
+  position: relative; /* Needed for absolute positioning of child elements */
+  z-index: 1000; 
+  background-color: #002366;
+  color: white;
+  padding-bottom: 24px; /* Increased padding for larger tab */
+  border-radius: 10px 10px 0 0; /* Rounded corners on the top */
+  box-shadow: 0 0 15px rgba(51, 71, 176, 0.5); /* Glow effect */
+  font-weight: bold; /* Make the font bold */
+  font-size: 21px;
+  width: 100%; /* Ensure the tab fills the container */
+  text-align: center; /* Center the text horizontally */
+  padding-top: 28px; /* HEIGHT OF THE TAB */
+  position: relative; /* Needed for absolute positioning of child elements */
+  height: 200px;
+  bottom: -130px;
+  width: 100%; /* Ensure tab fills the width of the container */
+}
+
+.event-icon {  
+  position: absolute;
+  
+  transition: all 0.3s ease;
+  left: 30px; /* Adjust as needed to position the icon inside the tab */
+  background-color: #96BDFB; /* Light blue background */
+  border-radius: 50%; /* Makes the div circular */
+  width: 45px; /* Width of the icon */
+  height: 45px; /* Height of the icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001; /* Ensure the icon is above the tab */
+  box-shadow: 0 0 15px 5px #96bdfbb4; /* Horizontal offset, Vertical offset, Blur radius, Spread radius, Color */
+  bottom: 50px; /* Position when tab is not expanded */
+}
+.expanded-tab .event-icon {
+  bottom: 190px; /* Adjust this value to move the icon with the expanded tab */
+}
+
+.book-meeting-button {
+  display: none;
+  background-color: #E85C0E;
+  color: white;
+  padding: 12px; /* Increased padding to match the tab size */
+  border: none;
+  transition: all 0.3s ease;
+ border-radius: 5px;
+  z-index: 1002; /* Ensure the icon is above the tab */
+  margin-top:-20px;
+  margin-bottom:20px;
+  font-size: 20px;
+}
+
+.events-button {
+  display: none;
+  background-color: #96bdfbb4;
+  color: white;
+  padding: 12px; /* Increased padding to match the tab size */
+  border: none;
+  transition: all 0.3s ease;
+ border-radius: 5px;
+  z-index: 1002; /* Ensure the icon is above the tab */
+  margin-top:-20px;
+  margin-bottom:20px;
+  font-size: 20px;
+  margin-right: 10px; /* Add margin to the right of the button */
+}
+
+/* Expanded state styles for interactive tab */
+.expanded-tab {
+  margin-bottom: 30px; /* Adjusted for increased padding */
+
+}
+
+.expanded-button {
+  display: block;
+}
+
+
+.events-page-button {
+  display: none; /* Initially hidden, similar to the book-meeting-button */
+  background-color: #4c8baf; /* Different color for distinction */
+  color: white;
+  padding: 20px; /* Consistent padding with the book-meeting-button */
+  border: none;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  z-index: 1002; /* Maintain high z-index */
+  width: 100%; /* Ensure it fills the container */
+}
+
+/* Expanded state styles for interactive tab */
+.expanded-events-page-button {
+  display: block; /* Show the button in expanded state */
+}
+
+
+
+
+
+.stat-container {
+  display: flex;
+  background-color: rgba(0, 31, 77, 0.8); /* Dark blue background with alpha transparency */
+  padding: 20px;
+  justify-content: space-between;
+  width: 55%;
+  margin: auto; /* Centers the container */
+  border-radius: 10px; /* Rounded edges, adjust radius as needed */
+  margin-top:-500px;
+  padding-top:40px;
+  padding-bottom: 40px;
+}
+
+.stat-box {
+  text-align: center;
+  flex: 1; /* Flex value adjusted for equal spacing */
+}
+
+.stat-percentage {
+  font-size: 48px; /* Large text for percentage */
+  margin: 0;
+  font-weight: bold;
+  color: white; /* White text color for percentage */
+}
+
+.stat-text {
+  font-size: 18px; /* Size of the description text */
+  margin: 0;
+  color: white; /* White text color for description */
+}
+
+.stat-highlight {
+  color: #E85C0E; /* Orange text for the highlighted word */
+}

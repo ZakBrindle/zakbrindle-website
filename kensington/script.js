@@ -20,3 +20,36 @@ function toggleImages(showId, hideId) {
     toggleImages('search1', 'search2');
   });
   
+
+
+
+
+  function toggleInteractiveTab() {
+    var tab = document.getElementById('interactiveTab');
+    
+    var tab = document.getElementById('interactiveTab');
+    var bookMeetingButton = document.getElementById('bookMeetingButton');
+    var eventsPageButton = document.getElementById('eventsPageButton'); // Get the new button
+  
+
+    var icon = document.querySelector('.event-icon'); // Get the icon
+  
+    if (tab.classList.contains('expanded-tab')) {
+      // Collapse the tab
+      tab.classList.remove('expanded-tab');
+      bookMeetingButton.classList.remove('expanded-button');
+      eventsPageButton.classList.remove('expanded-events-page-button'); // Hide the new button
+      icon.style.bottom = '50px'; // Reset icon position
+    } else {
+      // Expand the tab
+      tab.classList.add('expanded-tab');
+      bookMeetingButton.classList.add('expanded-button');
+      eventsPageButton.classList.add('expanded-events-page-button'); // Show the new button
+      icon.style.bottom = '140px'; // Adjust for expanded tab
+    }
+  }
+// Optional: Function to handle booking a meeting
+function bookMeeting() {
+  // Logic for booking a meeting goes here
+  alert('Booking a meeting...');
+}
