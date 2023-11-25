@@ -100,14 +100,12 @@ nav a {
     cursor: pointer;
 }
 
-.nav-icons a:hover {
-    background-color: #E85C0E; /* Change background color to orange */
-    color: white; /* Change text color to white, if your icons have a text color */
-    border-radius: 50%; /* Keep the rounded shape on hover for icon buttons */
-  }
+
+
 .video-wrapper {
     position: relative;
     width: 100%;
+    height: 100vh; /* Full viewport height */
     overflow: hidden;
 }
 
@@ -174,14 +172,14 @@ nav a {
     display: flex;
     justify-content: center; /* Center the tabs if there's extra space on the sides */
     margin-bottom: -20.5px; /* Ensure no gap between tabs and search box */
-    margin-right: 170px;
+    margin-right: 80px;    
   }
   
   .tab {
     background-color: #00277a;
     border: 0px solid #ccc;
   border-bottom: none; /* Remove the bottom border to blend with the search box */
-  padding: 10px 20px;
+  padding: 20px 20px;
   margin: 0 0px; /* Adjust spacing between the tabs if necessary */
   cursor: pointer;
   transition: background-color 0.3s;
@@ -193,7 +191,7 @@ nav a {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50px; /* You can set a fixed height to ensure all tabs are the same size */
+  height: 26px; /* You can set a fixed height to ensure all tabs are the same size */
     color: #5e5e5e;
   }
   
@@ -211,11 +209,11 @@ nav a {
     margin-top: 20px; /* Space above the search box */
     padding: 10px; /* Reduced padding inside the search box */
     background-color: rgb(255, 255, 255); /* White background */
-    border-radius: 25px; /* Rounded corners */
+    border-radius: 0px; /* Rounded corners */
     display: flex; /* Use flexbox for inner items */
     align-items: center; /* Center the items vertically */
     justify-content: space-between; /* Align items from end to end */
-    max-width: 600px; /* Maximum width of the search box */
+    max-width: 1000px; /* Maximum width of the search box */
     margin: 20px auto; /* Center the search box */
 }
 
@@ -232,7 +230,7 @@ nav a {
     background-color: #E85C0E; /* Button background color */
     color: white; /* Button text color */
     border: none; /* No border for button */
-    border-radius: 15px; /* Rounded corners for button */
+    border-radius: 8px; /* Rounded corners for button */
     cursor: pointer; /* Cursor for button */
     flex-grow: 2; /* Button will grow twice as much as inputs */
     white-space: nowrap; /* Prevents text in the button from wrapping */
@@ -281,8 +279,9 @@ footer {
   z-index: 2; 
 }
   .job-tile {
+    position: relative;
     width: 30%; 
-    height: 110px;
+    height: 170px;
     margin: 0 10px; 
     background-color: #f9f9f9;
     padding: 20px;
@@ -309,9 +308,58 @@ footer {
   
   .map-section {
     background-color: #002366; 
-    height: 300px; 
+    height: 2800px; 
+    width: 100%;
     
   }
-  
+
+
+  .mission-statement {
+    text-align: center; /* Centers the text */
+    color: white;      /* Sets the text color to white */
+}
+
+  .locationpin {
+    height: 23px;
+    
+  }
  
   
+  .jobID {
+    font-size: 12px;
+    padding-bottom: 20px;
+  }
+
+  .locationText {
+    font-size: 18px;
+    margin-top: -5px;
+  }
+
+  .bookmark-wrapper {
+    position: absolute;
+    top: 0;      /* Align to the top of the job-tile */
+    right: 0;    /* Align to the right of the job-tile */
+    height: 20%; /* You can adjust this as needed */
+  }
+
+  .bookmark-icon {
+    height: 70px; /* Adjust as needed */
+    width: 80px;  /* Adjust as needed */
+  }
+
+  .arrow-icon {
+    position: absolute;
+    bottom: 10;    /* Align to the bottom of the job-tile */
+    right: 0;     /* Align to the right of the job-tile */
+    height: 30px; /* Set the height as needed */
+    width: 50px;  /* Set the width as needed */
+    padding-right: 20px;
+  }
+
+  .jobTitle {
+    font-size: 25px;
+    padding-bottom: 20px;
+    color: #202020;
+    font-weight: bold; 
+    margin-bottom: -10px;
+  }

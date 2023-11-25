@@ -6,6 +6,7 @@
 <title>Kensington Additive</title>
 <link rel="stylesheet" href="styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+<script src="script.js"></script>
 </head>
 <body>
 
@@ -25,8 +26,15 @@
         </ul>
       </div>
       <div class="nav-icons">
-          <a href="#" class="upload-icon"><img src="upload-icon.png" alt="Upload"></a>
-          <a href="#" class="search-icon"><img src="magnifying-glass-icon.png" alt="Search"></a>
+        <a href="#" class="upload-icon">
+          <img id="upload1" src="upload-icon.png" alt="Upload" class="default">
+          <img id="upload2" src="upload-hover.png" alt="Upload" class="hover" style="display: none;">
+        </a>
+        <a href="#" class="search-icon">
+          <img id="search1" src="magnifying-glass-icon.png" alt="Search" class="default">
+          <img id="search2" src="search-hover.png" alt="Search" class="hover" style="display: none;">
+        </a>
+        
           <a style="width: 80px;"></a>
       </div>
     </nav>
@@ -38,13 +46,13 @@
   </video>
   <div class="blue-filter"></div>
   <div class="central-message">
-    <div style="padding-top: 40px;"></div>
+    <div style="padding-top: 220px;"></div>
     <h1 style="font-size: 25px; font-family: 'Fira Sans', sans-serif;">SPECIALIST HEADHUNTERS FOR THE</h1>
     <div style="padding-top: 15px;"></div> 
     <h1 style="font-size: 70px; font-family: 'Fira Sans', sans-serif;">Additive & Advanced</h1>
     <h1 style="font-size: 70px; font-family: 'Fira Sans', sans-serif;">Manufacturing Industries</h1>
 
-    <div style="padding-top: 130px;"></div>
+    <div style="padding-top: 90px;"></div>
     <div class="tab-search-container">
         <div class="tab-container">
           <button style="background-color: #fff;" class="tab">Find a candidate</button>
@@ -62,28 +70,42 @@
 <!-- Job tiles section -->
 <div class="job-tiles-wrapper">
   <div class="job-tile">
-    <h3>Director of AM</h3>
-    <p>United States</p>
-    
+    <div class="jobID"><b>Job ID:</b> 36044</div>
+    <div class="jobTitle">Director of AM</div>
+    <div class="locationText"><img class="locationpin" src="location pin.png" alt="">United States</div>
+    <div class="bookmark-wrapper"><img class="bookmark-icon" src="bookmark-fill.png" alt=""></div>
+    <img class="arrow-icon" src="arrow.png" alt="Arrow Icon">
   </div>
+
   <div class="job-tile">
-    <h3>Senior DevOps Engineer</h3>
-    <p>Bavaria, Germany</p>
-  
+    <div class="jobID"><b>Job ID:</b> 36045</div>
+    <div class="jobTitle">Senior DevOps Engineer</div>
+    <div class="locationText"><img class="locationpin" src="location pin.png" alt="">Bavaria, Germany</div>
+    <div class="bookmark-wrapper"><img class="bookmark-icon" src="bookmark.png" alt=""></div>
+    <img class="arrow-icon" src="arrow.png" alt="Arrow Icon">
   </div>
+
   <div class="job-tile">
-    <h3>Field Service Engineer</h3>
-    <p>Europe</p>
-  
+    <div class="jobID"><b>Job ID:</b> 36046</div>
+    <div class="jobTitle">Field Service Engineer</div>
+    <div class="locationText"><img class="locationpin" src="location pin.png" alt="">South East, France</div>
+    <div class="bookmark-wrapper"><img class="bookmark-icon" src="bookmark.png" alt=""></div>
+    <img class="arrow-icon" src="arrow.png" alt="Arrow Icon">
   </div>
+
+  
 </div>
 
 
-<div class="map-section">
+<div style="margin-bottom: 600px;" class="map-section">
 
 
+  <div style="padding-top: 200px;"></div> 
+    <h1 class="mission-statement" style="font-size: 55px; font-family: 'Fira Sans', sans-serif;">Our mission is to <span style="color: #E85C0E;">achieve</span> our client's</h1>
+    <h1 class="mission-statement" style="font-size: 55px; font-family: 'Fira Sans', sans-serif;">mission, by hiring the world's best talent.</h1>
 
-
+  <img style="width: 200vh; margin-top: -80px;" id="map-image" src="map-transparent.png" alt="map" class="default">
+ 
 
 </div>
 
