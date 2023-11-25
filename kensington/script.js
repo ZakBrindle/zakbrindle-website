@@ -53,3 +53,38 @@ function bookMeeting() {
   // Logic for booking a meeting goes here
   alert('Booking a meeting...');
 }
+
+
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Get the 'About Us' button and the dropdown menu
+    const aboutUsButton = document.querySelector('nav ul li a[href="#"]');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    // Function to show the dropdown
+    function showDropdown() {
+        dropdownMenu.style.display = 'block';
+        clearTimeout(dropdownMenu.timer);
+    }
+
+    // Function to hide the dropdown with a delay
+    function hideDropdown() {
+        // Set a timeout to give the user a chance to move the mouse over the dropdown
+        dropdownMenu.timer = setTimeout(() => {
+            dropdownMenu.style.display = 'none';
+        }, 300); // 300ms delay
+    }
+
+    // Show the dropdown when mouse enters the 'About Us' button
+    aboutUsButton.addEventListener('mouseenter', showDropdown);
+
+    // Hide the dropdown when mouse leaves the 'About Us' button
+    aboutUsButton.addEventListener('mouseleave', hideDropdown);
+
+    // Cancel the hide action if we enter the dropdown menu
+    dropdownMenu.addEventListener('mouseenter', showDropdown);
+
+    // Hide the dropdown when the mouse leaves the dropdown menu
+    dropdownMenu.addEventListener('mouseleave', hideDropdown);
+});

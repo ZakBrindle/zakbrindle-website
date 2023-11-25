@@ -21,84 +21,143 @@ header {
     flex: 0 0 auto; /* Do not grow or shrink, just be the size of the logo */
 }
 
+/* Main dropdown menu styling */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+/* Style for the dropdown list */
+.dropdown-menu ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+/* Style for the dropdown list items */
+.dropdown-menu li {
+  padding: 4px 5px;
+}
+
+/* Style for links in the dropdown */
+.dropdown-menu a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.3s;
+  text-align: left; /* Ensures text for each link is left-aligned */
+  padding: 8px 12px; /* Add padding to ensure clickable area is large enough */
+}
+
+/* Hover effect for dropdown links */
+.dropdown-menu a:hover {
+  background-color: #f8f8f8;
+  font-weight: bold; /* Make text bold on hover */
+}
+
+/* Chevron that appears when hovering over dropdown links */
+.dropdown-menu a:hover::after {
+  content: " >"; /* Adds a chevron */
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+
+/* Main navigation styling */
 nav {
-    display: flex; /* Use flexbox */
-    justify-content: space-between; /* Align the logo, nav, and icons */
-    align-items: center;
-    height: 100%; /* Full height of the header */
-    width: 100%; /* Ensure nav element spans the full width */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 }
 
+/* Style for the navigation menu container */
 nav .menu-container {
-    display: flex;
-    justify-content: center; /* Center the menu items */
-    align-items: center;
-    flex-grow: 1; /* Allow the nav list to grow and fill space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
 }
 
+/* Style for the navigation list */
 nav .menu-container ul {
-    list-style: none;
-    display: flex;
-    justify-content: center; /* Center the menu items */
-    align-items: center;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
+/* Style for the navigation list items */
 nav li {
-    padding: 0 15px; /* Adjust spacing between menu items */
+  padding: 0 15px;
 }
 
+/* Style for the main navigation links */
 nav a {
-    text-decoration: none;
-    color: rgb(230, 230, 230);
-    font-size: 18px; /* Adjust if needed */
-    padding: 32px 25px; /* Increase padding for taller and wider buttons */
-    display: inline-block; /* Ensures padding affects the element properly */
-    overflow: hidden; /* Keeps pseudo-elements within bounds */
-    position: relative; /* For absolute positioning of pseudo-elements */
-    transition: color 0.3s, transform 0.3s; /* Transition for color and transform */
-    transform-origin: center; /* Ensure scaling happens from the center */
-    border-radius: 4px; /* Optional: for rounded corners */
-    
-  }
-  
-  nav a::before {
-    content: '';
+  text-decoration: none;
+  color: rgb(230, 230, 230);
+  font-size: 18px;
+  padding: 32px 25px;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  transition: color 0.3s, transform 0.3s;
+  transform-origin: center;
+  border-radius: 4px;
+}
+
+/* Scale effect for the main navigation links */
+nav > .menu-container > ul > li > a::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #001847; /* Dark blue color */
-  transform: scaleX(0); /* Start with an X scale of 0 */
-  transform-origin: left; /* Transform origin on the left */
-  transition: transform 0.3s ease-out; /* Transition for transform effect */
-  z-index: -1; /* Place pseudo-element behind text */
-  }
-  
-  nav a:hover::before {
-    transform: scaleX(1); /* Scale to full width on hover */
-  }
-  
-  nav a:hover {
-    color: white; /* Change text color to white on hover */
-  }
+  background-color: #001847;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-out;
+  z-index: -1;
+}
 
+/* Hover effect for the main navigation links */
+nav > .menu-container > ul > li > a:hover::before {
+  transform: scaleX(1);
+}
+
+/* Change text color to white on hover for the main navigation links */
+nav > .menu-container > ul > li > a:hover {
+  color: white;
+}
+
+/* Icons in the navigation */
 .nav-icons {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .nav-icons a {
-    padding: 0 15px;
+  padding: 0 15px;
 }
 
 .nav-icons a img {
-    height: 24px;
-    width: 24px;
-    cursor: pointer;
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
 }
+
+
+
 
 
 
@@ -266,8 +325,6 @@ footer {
 }
 
 
-
-/* ... existing CSS ... */
 
 .job-tiles-wrapper {
   display: flex;
@@ -490,7 +547,7 @@ footer {
   width: 55%;
   margin: auto; /* Centers the container */
   border-radius: 10px; /* Rounded edges, adjust radius as needed */
-  margin-top:-500px;
+  margin-top:-200px;
   padding-top:40px;
   padding-bottom: 40px;
 }

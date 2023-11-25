@@ -6,6 +6,7 @@
 <title>Kensington Additive</title>
 <link rel="stylesheet" href="styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+
 <script src="script.js"></script>
 </head>
 <body>
@@ -15,14 +16,23 @@
         <img src="logo.png" alt="Company Logo" style="max-height: 50px; margin-left: 80px; margin-top: 5px;">
     </div>
     <nav>
-      <div class="menu-container">
+      <div class="menu-container" style="font-family: 'Fira Sans', sans-serif;">
         <ul>
-          <li><a href="#">About Us</a></li>
+          <li><a href="#">About Us</a>
+            <div class="dropdown-menu" style="font-family: 'Fira Sans', sans-serif;">
+              <ul>
+                  <li><a class="dropdown-menu-item" href="#">Additive Manufacturing</a></li>
+                  <li><a class="dropdown-menu-item" href="#">Meet the Team</a></li>
+                  <li><a class="dropdown-menu-item" href="#">Join the Team</a></li>
+              </ul>
+          </div>
+          </li>
+        
           <li><a href="#">Job Seekers</a></li>
           <li><a href="#">Employers</a></li>
           <li><a href="#">Resources</a></li>
           <li><a href="#">Sectors</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li><a  href="#">Contact Us</a></li>
         </ul>
       </div>
       <div class="nav-icons">
