@@ -1,3 +1,7 @@
+
+
+
+
 // Function to toggle images
 function toggleImages(showId, hideId) {
     document.getElementById(showId).style.display = 'block';
@@ -88,3 +92,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Hide the dropdown when the mouse leaves the dropdown menu
     dropdownMenu.addEventListener('mouseleave', hideDropdown);
 });
+
+
+
+
+

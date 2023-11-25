@@ -52,8 +52,13 @@
 
 <div class="video-wrapper">
   <video autoplay loop muted id="background-video">
+    <!-- Primary source from Firebase -->
     <source src="https://firebasestorage.googleapis.com/v0/b/kensington-video.appspot.com/o/KA_HeroVideo_V1_noSound_repeatOnce.mp4?alt=media&token=15b8b3cb-e5f9-4a6c-a66f-b160b4998a35" type="video/mp4">
-  </video>
+    <!-- Fallback source -->
+    <source src="./KAHero.mp4" type="video/mp4">
+    <!-- Display a message if none of the videos can be loaded -->
+    Your browser does not support the video tag.
+</video>
   <div class="blue-filter"></div>
   <div class="central-message">
     <div style="padding-top: 220px;"></div>
