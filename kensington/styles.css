@@ -14,14 +14,14 @@ header {
     display: flex; /* Use flexbox */
     align-items: center; /* Center items vertically */
     justify-content: space-between; /* Space out logo, nav, and icons */
-    background-color: #ffffff0a; /* Semi-transparent white background */
+    background-color: rgba(3, 3, 3, 0.253); /* Semi-transparent white background */
     padding: 10px 0; /* Adjust the padding to increase the height of the header */
     height: 80px;
     position: fixed; /* Make header fixed at the top */
     width: 100%; /* Ensure the header spans the full width */
     top: 0;
     left: 0;
-    z-index: 10; /* Higher z-index to keep the header above other content */
+    z-index: 100000000000000000000000000; /* Higher z-index to keep the header above other content */
 }
 
 .logo-container {
@@ -699,4 +699,125 @@ footer {
 
 .stat-highlight {
   color: #E85C0E; /* Orange text for the highlighted word */
+}
+
+
+
+
+
+
+
+
+/* Featured Jobs Section */
+.featured-jobs-wrapper {
+  background-color: #F6F8FF; 
+  padding: 40px 0;
+  text-align: center;
+}
+
+.featured-jobs-header {
+  margin-bottom: 30px;
+}
+
+.featured-jobs-heading {
+  font-size: 3em; 
+  color: #333;
+  text-align: left;
+  margin-left: 130px;
+}
+
+.featured-jobs-description {
+  margin: 10px 0 20px;
+  color: #666;
+  text-align: left;
+  margin-left: 130px;
+  font-size: 2em; 
+}
+
+
+
+.featured-jobs-view-all {
+  color: #4c8baf;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: -40px !important; /* Force override */
+}
+
+.featured-jobs-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 0 auto;
+  max-width: 1600px; /* Adjust based on your design */
+}
+
+.featured-job-card {
+  width: calc(33% - 10px); /* Three cards per row */
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  position: relative; /* For absolute positioning of bookmark and arrow */
+}
+
+.featured-job-detail {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.featured-job-id {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.featured-job-bookmark {
+  font-size: 1.2em;
+  color: orange; /* Replace with the color you use for icons */
+  margin-top: -15px;
+  margin-right: -8px;
+}
+
+.featured-job-title {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 5px;
+  text-align: left;
+  font-size: 22px;
+}
+
+.featured-job-location {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 10px;
+  text-align: left;
+  margin-top: 15px;
+}
+
+.featured-job-type,
+.featured-job-contract {
+  font-size: 0.8em;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.featured-job-arrow {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 1.2em;
+  color: #5e5e5e; /* Replace with the color you use for icons */
+}
+
+@media (max-width: 768px) {
+  .featured-job-card {
+    width: calc(50% - 20px); /* Two cards per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-job-card {
+    width: 100%; /* One card per row on very small screens */
+  }
 }
