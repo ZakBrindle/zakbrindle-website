@@ -1,7 +1,14 @@
 /* Basic Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-body { font-family: 'Arial', sans-serif; }
+body { 
+  font-family: 'Arial', sans-serif; 
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+html {
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
 
 header {
     display: flex; /* Use flexbox */
