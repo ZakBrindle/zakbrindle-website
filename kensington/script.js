@@ -141,3 +141,32 @@ document.addEventListener('DOMContentLoaded', () => {
     console.error('Job tiles wrapper not found.'); // Debugging line to check if job tiles wrapper is found
   }
 });
+
+
+
+
+// TESTIMONIALS
+let currentTestimonial = 1;
+
+function showTestimonial(testimonialNumber) {
+  // Hide all testimonials
+  document.querySelectorAll('.testimonial').forEach(t => t.style.display = 'none');
+  
+  // Show the specified testimonial
+  document.getElementById(`testimonial-${testimonialNumber}`).style.display = 'block';
+}
+
+function nextQuote() {
+  currentTestimonial = (currentTestimonial % 5) + 1;
+  showTestimonial(currentTestimonial);
+}
+
+function previousQuote() {
+  currentTestimonial = ((currentTestimonial + 3) % 5) + 1;
+  showTestimonial(currentTestimonial);
+}
+
+// Initialize the first quote
+document.addEventListener('DOMContentLoaded', () => {
+  showTestimonial(currentTestimonial);
+});

@@ -187,7 +187,7 @@ nav > .menu-container > ul > li > a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(14, 54, 124, 0.651); /* Blue color filter */
+    background-color: #0e367ca6; /* Blue color filter */
     z-index: 1;
 }
 
@@ -396,6 +396,7 @@ footer {
     
   }
 
+ 
   .circle-element {
     background-color: #96bdfb7c; /* Replace with the desired color for the circle */
     border-radius: 50%; /* Makes it a circle */
@@ -404,8 +405,8 @@ footer {
     position: absolute; /* Position relative to the nearest positioned ancestor */
     right: -300px; /* Half outside the right edge */
     z-index: 5; /* Adjust as needed */
-    margin-top:-400px;
-    overflow: hidden; /* Hide overflow to remove the scrollbar */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Align center vertically */
   }
 
   .pill-shaped-element {
@@ -458,7 +459,6 @@ footer {
 
   .featured-jobs-section {
     background-color: #F6F8FF; 
-    height: 1600px; 
     width: 100%;
     margin-top: -100px;
   }
@@ -820,4 +820,446 @@ footer {
   .featured-job-card {
     width: 100%; /* One card per row on very small screens */
   }
+}
+
+
+
+
+
+
+
+.testimonials-section {
+  position: relative;
+  width: 100%;
+  background-image: url("./3D\ PRINT\ PHOTO\ 4-edit.png");
+  background-size: cover;
+  background-position: center;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.testimonials-container {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial {
+  display: none; /* hide all by default */
+  animation: flyIn 0.5s ease-in-out forwards; /* animation for flying in */
+  margin-top: 80px;
+}
+
+/* Default show first testimonial */
+#testimonial-1 {
+  display: block;
+}
+
+.quote {
+  font-style: italic;
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 20px auto;
+  display: block;
+}
+
+.author {
+  color: #fff;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+.arrow {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: rgb(255, 255, 255);
+  background-color: #33333300;
+  border: 0;
+  margin: 50px;
+  font-weight: bold;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  z-index: 500000000000000000000;
+}
+
+.left-arrow {
+  left: 0;
+}
+
+.right-arrow {
+  right: 0;
+}
+
+/* Keyframes for the animation */
+@keyframes flyIn {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+
+
+
+
+.latest-blogs-section {
+  width: 100%;
+  padding: 40px 0;
+  text-align: center;
+  background-color: #F6F8FF; 
+}
+
+.latest-blogs-heading {
+  font-size: 25px; 
+  color: #333;
+  text-align: left;
+  margin-left: 130px;
+}
+
+.latest-blogs-description {
+  margin: 10px 0 20px;
+  color: #666;
+  text-align: left;
+  margin-left: 130px;
+  font-size: 2em; 
+}
+
+.latest-blogs-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.blog-cards-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.blog-card {
+  width: calc(33% - 40px); /* Adjust the spacing based on your design */
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden; /* Clip the contents to the border radius */
+  background: #fff;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.blog-card img {
+  width: 100%;
+  height: auto;
+  display: block; /* Remove any space below the image */
+}
+
+.blog-info {
+  padding: 15px;
+  font-family: 'Fira Sans', sans-serif;
+  
+  text-align: left;
+}
+
+.blog-date {
+  color: #777;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  text-align: right;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.blog-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-family: 'Fira Sans', sans-serif;
+  text-align: left;
+}
+
+.blog-excerpt {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.blog-read-more {
+  font-weight: bold;
+  color: #4c8baf;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.blog-read-more:hover {
+  color: #333;
+}
+
+
+
+
+.salary-report-section {
+  position: relative;
+  width: 100%;
+  background-image: url('./3D\ PRINT\ PHOTO\ 3.png');
+  background-size: cover;
+  background-position: center;
+  padding: 50px 0;
+}
+
+.salary-report-container {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 110%;
+  max-width: 600px;
+  height: 550px;
+  position: relative;
+  margin: -95px auto; /* Adjust this value to control the overlap */
+  left: 16.66%; /* Two thirds from the left */
+
+  z-index: 2;
+  /* Rest of the styles remain the same */
+}
+
+.salary-report-heading {
+  font-size: 42px;  
+  color: #3d3d3d;
+  font-weight: bold; /* Make text bold on hover */
+  font-family: 'Fira Sans', sans-serif;
+
+}
+
+
+.salary-report-description {
+  font-size: 25px;  
+  color: #3d3d3d;
+  font-family: 'Fira Sans', sans-serif;
+
+}
+
+.salaryreport-input{
+  border-radius: 10px;
+  font-size: 26px;
+  margin-top: 10px;
+  border-color: #ffffff00;
+  margin-left: 50px;
+}
+
+.salaryreport-checkbox {
+  font-size: 15px;  
+  color: #3d3d3d;
+  font-family: 'Fira Sans', sans-serif;
+  margin-left: 50px;
+
+}
+
+.salaryreport-button {
+  padding: 10px 20px; /* Padding inside the button */
+  background-color: #E85C0E; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* No border for button */
+  border-radius: 8px; /* Rounded corners for button */
+  cursor: pointer; /* Cursor for button */
+  flex-grow: 2; /* Button will grow twice as much as inputs */
+  white-space: nowrap; /* Prevents text in the button from wrapping */
+  width: 400px;
+}
+
+
+
+
+
+
+
+
+
+.final-call-to-action-section {
+  position: relative;
+  width: 100%;
+  background-image: url('./final-call.png');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 50px 0;
+}
+
+
+
+.cta-content h2 {
+  color: #f7f7f7; /* Dark text color for visibility */
+  margin-bottom: 20px;
+}
+
+.cta-content p {
+  color: #e6e6e6; /* Lighter text color */
+  margin-bottom: 40px;
+}
+
+.cta-buttons {
+  /* Centering the buttons */
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Spacing between buttons */
+}
+
+.cta-button {
+  border: none;
+  padding: 20px 40px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 5px; /* Rounded corners */
+  width: 200px; /* Fixed width for both buttons */
+}
+
+.clients-button {
+  background-color: #e7e7e7; /* Client button color */
+  color: #333;
+}
+
+.candidates-button {
+  background-color: #e7e7e7; /* Candidates button color */
+  color: #333;
+}
+
+/* Hover effect */
+.cta-button:hover {
+  background-color: #E85C0E; /* Orange background on hover */
+  color: white; /* White text on hover */
+}
+
+
+
+
+
+
+
+.footer-section {
+  background-color: #F6F8FF;
+  padding-top: 150px; /* Increase padding to make room for the overlapping element */
+  
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.footer-container {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 40%;
+  position: absolute; /* Position it absolutely relative to the footer-section */
+  top: -80px; /* Adjust this value to control how much it overlaps */
+  left: 24%; /* Start from the middle */
+  transform: translateX(-50%); /* Adjust horizontally to truly center it */
+  z-index: 10; /* Make sure it sits on top of other elements */
+}
+
+.footer-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px; /* Add margin to push the contact and sitemap sections down */
+
+  position: absolute; /* Position the footer-info absolutely within the footer-section */
+  right: 0; /* Align to the right side of the footer-section */
+  top: -50px; /* Move up by 50px; adjust as necessary */
+  width: calc(100% - 950px); /* Adjust the width as necessary; subtracting the left margin of .footer-container */
+}
+.contact-section,
+.sitemap-section {
+  width: 75%; /* Set width for contact and sitemap sections */
+  padding: 20px;
+}
+
+.newsletter-section h2,
+.contact-section h3,
+.sitemap-section h3 {
+  margin-bottom: 10px;
+  width: 55%; /* Adjust the width as needed, or use flex-basis if using flex-grow */
+}
+
+.newsletter-section form input[type="text"],
+.newsletter-section form input[type="email"],
+.newsletter-section form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.newsletter-section form button {
+  background-color: #E85C0E;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.checkbox-container label {
+  font-size: 0.9em;
+}
+
+.sitemap-section ul {
+  list-style: none;
+  padding: 0;
+  
+}
+
+.sitemap-section ul li a {
+  color: #000;
+  text-decoration: none;
+}
+
+.contact-sitemap-container {
+  display: flex; /* This will place contact and sitemap sections side by side */
+  justify-content: space-between; /* This will put space between the two sections */
+  width: 100%; /* Adjust width as needed */
+  flex-direction: column; /* Stack the sections on top of each other on small screens */
+  
+}
+
+@media (max-width: 768px) {
+  .footer-section {
+    flex-direction: column;
+  }
+
+  .footer-container {
+    position: static;
+    margin-bottom: 20px;
+  }
+
+
+}
+
+
+
+
+
+.footer-bottom-bar {
+  background-color: #002366; /* Change to the blue shade you want */
+  color: white;
+  text-align: center;
+  padding: 10px 0; /* Adjust padding to your preference */
+  font-size: 14px; /* Adjust font size to your preference */
+  border-top: 1px solid #ffffff; /* Optional: adds a subtle separator */
+  width: 100%;
 }
