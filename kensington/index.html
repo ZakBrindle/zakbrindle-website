@@ -83,7 +83,32 @@
 </div>
 
 <!-- Job tiles section -->
+<div class="job-tiles-container">
 <div class="job-tiles-wrapper">
+  <div class="job-tile">
+    <div class="jobID"><b>Job ID:</b> 36044</div>
+    <div class="jobTitle">Director of AM</div>
+    <div class="locationText"><img class="locationpin" src="location pin.png" alt="">United States</div>
+    <div class="bookmark-wrapper"><img class="bookmark-icon" src="bookmark-fill.png" alt=""></div>
+    <img class="arrow-icon" src="arrow.png" alt="Arrow Icon">
+  </div>
+
+  <div class="job-tile">
+    <div class="jobID"><b>Job ID:</b> 36045</div>
+    <div class="jobTitle">Senior DevOps Engineer</div>
+    <div class="locationText"><img class="locationpin" src="location pin.png" alt="">Bavaria, Germany</div>
+    <div class="bookmark-wrapper"><img class="bookmark-icon" src="bookmark.png" alt=""></div>
+    <img class="arrow-icon" src="arrow.png" alt="Arrow Icon">
+  </div>
+
+  <div class="job-tile">
+    <div class="jobID"><b>Job ID:</b> 36046</div>
+    <div class="jobTitle">Field Service Engineer</div>
+    <div class="locationText"><img class="locationpin" src="location pin.png" alt="">South East, France</div>
+    <div class="bookmark-wrapper"><img class="bookmark-icon" src="bookmark.png" alt=""></div>
+    <img class="arrow-icon" src="arrow.png" alt="Arrow Icon">
+  </div>
+
   <div class="job-tile">
     <div class="jobID"><b>Job ID:</b> 36044</div>
     <div class="jobTitle">Director of AM</div>
@@ -110,9 +135,9 @@
 
   
 </div>
+</div>
 
-
-<div style="margin-bottom: 600px;" class="map-section">
+<div class="map-section">
 
 
   <div style="padding-top: 200px;"></div> 
@@ -137,13 +162,77 @@
     </div>
   </div>
   
+  <center>  
+  <button style="margin-top: 50px;" id="bookMeetingButton-map" onclick=" bookMeeting()" class="book-meeting-button-map">Book a meeting</button>
+  <button id="successStories-map" class="success-stories-map">Read Success Stories</button>
+</center>
+
+<!-- THERE IS A BIG GAP HERE, HOW DO I REMOVE IT -->
+
+</div>
+
+
+<div class="pill-shaped-element">
+
+
+  <div class="client-logo-container">
+    <!-- Repeat the logo-item div 20 times, each with a different logo image -->
+    <div class="logo-item"><img src="./KA_client-logos_2023/Velo3D.png" alt="Velo3D"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/GEAdditive.png" alt="GE Additive"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/DMGMori.png" alt="DMG Mori"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/OPT.png" alt="OPT Industries"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/SLMSolutions.png" alt="SLM Solutions"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/HP.png" alt="HP"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/6K.png" alt="6K"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/Stratasys.png" alt="Stratasys"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/AddUp.png" alt="AddUp"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/UniformityLabs.png" alt="Uniformity Labs"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/Essentium.png" alt="Essentium"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/Raplas.png" alt="RAPLAS"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/3DS.png" alt="3D Systems"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/AdditiveIndustries.png" alt="Additive Industries"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/AddmanGroup.png" alt="AddMan Engineering"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/Farsoon.png" alt="Farsoon Technologies"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/Carbon.png" alt="Carbon"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/IPG.png" alt="IPG Photonics"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/nanoscribe.png" alt="nanoscribe"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/AutoDesk.png" alt="AutoDesk"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/Sigma.png" alt="Sigma Additive"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/Aerojet.png" alt="Aerojet Rocketdyne"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/HCStarck.png" alt="H.C.Starck"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/ExOne.png" alt="ExOne"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/AdvancedTek.png" alt="AdvancedTek"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/Laserlines.png" alt="laserlines"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/Sinterit.png" alt="Sinterit"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/RENA.png" alt="RENA"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/bigrep.png" alt="bigrep"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/Shapeways.png" alt="Shapeways"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/Voxeljet.png" alt="voxeljet"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/Makerbot.png" alt="makerbot"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/oerlikon.png" alt="oerlikon"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/ATI.png" alt="ATI"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/eos.png" alt="EOS"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/Messer.png" alt="Messer"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/Gefertec.png" alt="gefertec"></div>
+    <div class="logo-item"><img src="./KA_client-logos_2023/HighDream.png" alt="HDM"></div>
+
+
   
+  </div>
+</div>
 
 
+<div class="circle-element"></div>
 
+<div class="featured-jobs-section">
+
+  <h1 class="title-page" style="padding: 80px; font-size: 55px; font-family: 'Fira Sans', sans-serif;">Featured Jobs</h1>
+   
 
 
 </div>
+
+
 
      <!-- Floating buttons container -->
      <div class="floating-buttons">
@@ -167,7 +256,7 @@
       <!-- VISITING RAPID? FORMNEXT - INTERACTIVE TAB -->
       <div id="interactiveTabContainer" class="interactive-tab-container">
         <img src="event-icon.png" class="event-icon" alt="Event Icon">
-        <div id="interactiveTab" class="interactive-tab" style="font-family: 'Fira Sans', sans-serif;" onclick="toggleInteractiveTab()">Will you be at RAPID this year?</div>
+        <div id="interactiveTab" class="interactive-tab" style="font-family: 'Fira Sans', sans-serif;">Will you be at RAPID this year?</div>
         <table style="z-index: 200000;">
           <tr style="padding-right: 10px;">
             <td>
@@ -175,7 +264,7 @@
             </td>
         
             <td>
-              <button id="bookMeetingButton" onclick=" bookMeeting()" class="book-meeting-button">Book a meeting</button>
+              <button id="bookMeetingButton" onclick="bookMeeting()" class="book-meeting-button">Book a meeting</button>
             </td>
           </tr>
         </table>

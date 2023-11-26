@@ -324,19 +324,35 @@ footer {
     }
 }
 
-
+.job-tiles-container {
+  overflow-x: auto;
+  padding-left: 0; /* Or adjust this value so that the first card is fully visible */
+}
 
 .job-tiles-wrapper {
   display: flex;
-  justify-content: center;
   position: absolute;
-  width: 100%;
+  margin-left: 0; /* Adjust this as needed to ensure it starts on-screen */
   left: 0;  
   transform: translateY(-50%); 
   z-index: 2; 
+  width: 100vw; /* Set to the width of the viewport */
+  overflow: hidden; /* Hide overflow to remove the scrollbar */
 }
+
+
+@keyframes slideTiles {
+  0% {
+    transform: translateX(100%); /* Start off-screen to the right */
+  }
+  100% {
+    transform: translateX(-100%); /* End off-screen to the left */
+  }
+}
+
   .job-tile {
     position: relative;
+    flex: 0 0 30%; /* This sets the basis to 30% and doesn't allow it to grow or shrink */
     width: 30%; 
     height: 170px;
     margin: 0 10px; 
@@ -346,6 +362,9 @@ footer {
     border-radius: 8px; 
     text-align: left;
     transition: box-shadow 0.3s; 
+    min-width: 150px;
+    display: inline-block; /* Tiles as inline blocks for animation */
+  
   }
   
   .job-tile:hover {
@@ -364,11 +383,79 @@ footer {
   }
   
   .map-section {
-    background-color: #002366; 
-    height: 2800px; 
+    background-color: #001742; 
     width: 100%;
+    margin-bottom: -100px;
     
   }
+
+  .circle-element {
+    background-color: #96bdfb7c; /* Replace with the desired color for the circle */
+    border-radius: 50%; /* Makes it a circle */
+    width: 600px; /* Diameter of the circle */
+    height: 600px; /* Diameter of the circle */
+    position: absolute; /* Position relative to the nearest positioned ancestor */
+    right: -300px; /* Half outside the right edge */
+    z-index: 5; /* Adjust as needed */
+    margin-top:-400px;
+    overflow: hidden; /* Hide overflow to remove the scrollbar */
+  }
+
+  .pill-shaped-element {
+    background-color: white;
+    border-radius: 50px;
+    width: 80%;
+    height: 100px;
+    margin: 50px auto; /* Center the pill in the page, adjust top margin as needed */
+    position: relative; /* This is important for positioning the circle element */
+    overflow: hidden;
+    white-space: nowrap;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 800;
+}
+
+
+
+.client-logo-container {
+    display: flex;
+    flex-wrap: nowrap;
+    animation: scroll-logos 30s linear infinite;
+    z-index: 600000000; /* Make sure it's above the pill-shaped element */
+}
+
+.logo-item {
+  flex: 0 0 12.5%; /* Flex-grow | Flex-shrink | Flex-basis */
+  display: flex; /* Use flex here to center the image vertically and horizontally */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  padding: 10px; /* Adjust padding to give some space around the logos */
+}
+
+.logo-item img {
+  max-width: 100%; /* Ensure the logo fits within its container */
+  max-height: 100px; /* Adjust the height accordingly */
+  height: auto; /* Maintain aspect ratio */
+  margin-top: -5px;
+}
+
+/* Keyframes for the scrolling animation */
+@keyframes scroll-logos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%); /* Scrolls through all logos */
+    }
+}
+
+
+  .featured-jobs-section {
+    background-color: #F6F8FF; 
+    height: 1600px; 
+    width: 100%;
+    margin-top: -100px;
+  }
+
 
 
   .mission-statement {
@@ -485,11 +572,25 @@ footer {
   padding: 12px; /* Increased padding to match the tab size */
   border: none;
   transition: all 0.3s ease;
- border-radius: 5px;
+ border-radius: 8px;
   z-index: 1002; /* Ensure the icon is above the tab */
   margin-top:-20px;
   margin-bottom:20px;
   font-size: 20px;
+}
+
+.book-meeting-button-map {
+  background-color: #E85C0E;
+  color: white;
+  padding: 12px; /* Increased padding to match the tab size */
+  border: none;
+  transition: all 0.3s ease;
+ border-radius: 8px;
+  z-index: 1002; /* Ensure the icon is above the tab */
+  margin-top:-20px;
+  margin-bottom: 120px;
+  font-size: 20px;
+  margin-right:20px;
 }
 
 .events-button {
@@ -499,12 +600,31 @@ footer {
   padding: 12px; /* Increased padding to match the tab size */
   border: none;
   transition: all 0.3s ease;
- border-radius: 5px;
+ border-radius: 8px;
   z-index: 1002; /* Ensure the icon is above the tab */
   margin-top:-20px;
   margin-bottom:20px;
   font-size: 20px;
   margin-right: 10px; /* Add margin to the right of the button */
+}
+
+.success-stories-map {
+  background-color: #96bdfb00;
+  color: white;
+  padding: 12px; /* Increased padding to match the tab size */
+  border: 2px solid white; /* White outline added */
+  transition: all 0.3s ease;
+  border-radius: 8px; /* More rounded edges */
+  z-index: 1002; /* Ensure the icon is above the tab */
+  margin-top:-20px;
+  margin-bottom:20px;
+  font-size: 20px;
+  margin-right: 10px; /* Add margin to the right of the button */
+}
+.success-stories-map:hover {
+  color: #E85C0E; /* Change text color to orange on hover */
+  border-color: #E85C0E; /* Change border color to orange on hover */
+  cursor:pointer;
 }
 
 /* Expanded state styles for interactive tab */

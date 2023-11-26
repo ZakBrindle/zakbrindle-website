@@ -1,99 +1,143 @@
-
-
-
-
-// Function to toggle images
+// Function to toggle images on hover
 function toggleImages(showId, hideId) {
-    document.getElementById(showId).style.display = 'block';
-    document.getElementById(hideId).style.display = 'none';
+  document.getElementById(showId).style.display = 'block';
+  document.getElementById(hideId).style.display = 'none';
+}
+
+// Function to toggle the interactive tab and related elements
+function toggleInteractiveTab() {
+  console.log('toggleInteractiveTab called'); // Debugging line to confirm the function is called
+  const tab = document.getElementById('interactiveTab');
+  const bookMeetingButton = document.getElementById('bookMeetingButton');
+  const eventsPageButton = document.getElementById('eventsPageButton');
+  const icon = document.querySelector('.event-icon');
+
+  if (!tab || !bookMeetingButton || !eventsPageButton || !icon) {
+    console.error('One or more elements are not found.'); // Debugging line to check if any elements are not found
+    return; // Exit the function if elements are not found
   }
-  
-  // Event listener for the upload icon
-  document.querySelector('.upload-icon').addEventListener('mouseover', function() {
-    toggleImages('upload2', 'upload1');
-  });
-  document.querySelector('.upload-icon').addEventListener('mouseout', function() {
-    toggleImages('upload1', 'upload2');
-  });
-  
-  // Event listener for the search icon
-  document.querySelector('.search-icon').addEventListener('mouseover', function() {
-    toggleImages('search2', 'search1');
-  });
-  document.querySelector('.search-icon').addEventListener('mouseout', function() {
-    toggleImages('search1', 'search2');
-  });
-  
 
-
-
-
-  function toggleInteractiveTab() {
-    var tab = document.getElementById('interactiveTab');
-    
-    var tab = document.getElementById('interactiveTab');
-    var bookMeetingButton = document.getElementById('bookMeetingButton');
-    var eventsPageButton = document.getElementById('eventsPageButton'); // Get the new button
-  
-
-    var icon = document.querySelector('.event-icon'); // Get the icon
-  
-    if (tab.classList.contains('expanded-tab')) {
-      // Collapse the tab
-      tab.classList.remove('expanded-tab');
-      bookMeetingButton.classList.remove('expanded-button');
-      eventsPageButton.classList.remove('expanded-events-page-button'); // Hide the new button
-      icon.style.bottom = '50px'; // Reset icon position
-    } else {
-      // Expand the tab
-      tab.classList.add('expanded-tab');
-      bookMeetingButton.classList.add('expanded-button');
-      eventsPageButton.classList.add('expanded-events-page-button'); // Show the new button
-      icon.style.bottom = '140px'; // Adjust for expanded tab
-    }
+  if (tab.classList.contains('expanded-tab')) {
+    tab.classList.remove('expanded-tab');
+    bookMeetingButton.style.display = 'none';
+    eventsPageButton.style.display = 'none';
+    icon.style.bottom = '50px';
+  } else {
+    tab.classList.add('expanded-tab');
+    bookMeetingButton.style.display = 'block';
+    eventsPageButton.style.display = 'block';
+    icon.style.bottom = '130px'; // Adjust if necessary to match the expanded tab height
   }
-// Optional: Function to handle booking a meeting
+}
+
+// Optional function to handle booking a meeting
 function bookMeeting() {
-  // Logic for booking a meeting goes here
   alert('Booking a meeting...');
 }
 
+// Function to show and hide dropdown menu with delay
+function showDropdown() {
+  dropdownMenu.style.display = 'block';
+  clearTimeout(dropdownMenu.timer);
+}
 
+function hideDropdown() {
+  dropdownMenu.timer = setTimeout(() => {
+    dropdownMenu.style.display = 'none';
+  }, 300);
+}
 
+// Function to restart client logos animation
+function repeatAnimation(logoContainer) {
+  logoContainer.style.animation = 'none';
+  setTimeout(() => {
+    logoContainer.style.animation = '';
+  }, 10);
+}
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    // Get the 'About Us' button and the dropdown menu
-    const aboutUsButton = document.querySelector('nav ul li a[href="#"]');
-    const dropdownMenu = document.querySelector('.dropdown-menu');
+// Event listeners for when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+  // Event listeners for icon hover toggle
+  document.querySelector('.upload-icon').addEventListener('mouseover', () => toggleImages('upload2', 'upload1'));
+  document.querySelector('.upload-icon').addEventListener('mouseout', () => toggleImages('upload1', 'upload2'));
+  document.querySelector('.search-icon').addEventListener('mouseover', () => toggleImages('search2', 'search1'));
+  document.querySelector('.search-icon').addEventListener('mouseout', () => toggleImages('search1', 'search2'));
 
-    // Function to show the dropdown
-    function showDropdown() {
-        dropdownMenu.style.display = 'block';
-        clearTimeout(dropdownMenu.timer);
-    }
+  // Event listener for interactive tab
+  const interactiveTab = document.getElementById('interactiveTab');
+  if (interactiveTab) {
+    interactiveTab.addEventListener('click', toggleInteractiveTab);
+  } else {
+    console.error('Interactive tab not found.');
+  }
+  
+  // Attach the bookMeeting function to the button with id "bookMeetingButton"
+  const bookMeetingButton = document.getElementById('bookMeetingButton');
+  if (bookMeetingButton) {
+    bookMeetingButton.addEventListener('click', bookMeeting);
+  } else {
+    console.error('Book meeting button not found.');
+  }
 
-    // Function to hide the dropdown with a delay
-    function hideDropdown() {
-        // Set a timeout to give the user a chance to move the mouse over the dropdown
-        dropdownMenu.timer = setTimeout(() => {
-            dropdownMenu.style.display = 'none';
-        }, 300); // 300ms delay
-    }
-
-    // Show the dropdown when mouse enters the 'About Us' button
+  // Dropdown menu interaction
+  const aboutUsButton = document.querySelector('nav ul li a[href="#"]');
+  const dropdownMenu = document.querySelector('.dropdown-menu');
+  if (aboutUsButton && dropdownMenu) {
     aboutUsButton.addEventListener('mouseenter', showDropdown);
-
-    // Hide the dropdown when mouse leaves the 'About Us' button
     aboutUsButton.addEventListener('mouseleave', hideDropdown);
-
-    // Cancel the hide action if we enter the dropdown menu
     dropdownMenu.addEventListener('mouseenter', showDropdown);
-
-    // Hide the dropdown when the mouse leaves the dropdown menu
     dropdownMenu.addEventListener('mouseleave', hideDropdown);
+  } else {
+    console.error('Dropdown elements not found.'); // Debugging line to check if dropdown elements are found
+  }
+
+  // Client logos animation
+  const logoContainer = document.querySelector('.client-logo-container');
+  if (logoContainer) {
+    repeatAnimation(logoContainer);
+    document.querySelectorAll('.logo-item').forEach(item => {
+      item.addEventListener('animationend', () => repeatAnimation(logoContainer));
+    });
+  } else {
+    console.error('Logo container not found.'); // Debugging line to check if logo container is found
+  }
+
+  // Drag functionality for job tiles
+  const jobTilesWrapper = document.querySelector('.job-tiles-wrapper');
+  if (jobTilesWrapper) {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    jobTilesWrapper.addEventListener('mousedown', (e) => {
+      isDown = true;
+      jobTilesWrapper.style.animationPlayState = 'paused';
+      startX = e.pageX;
+      scrollLeft = jobTilesWrapper.scrollLeft;
+      e.preventDefault();
+    });
+
+    window.addEventListener('mouseup', () => {
+      if (isDown) {
+        isDown = false;
+        jobTilesWrapper.style.animationPlayState = 'running';
+      }
+    });
+
+    jobTilesWrapper.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      const x = e.pageX;
+      const walk = (x - startX) * 2;
+      jobTilesWrapper.scrollLeft = scrollLeft - walk;
+    });
+
+    jobTilesWrapper.addEventListener('mouseleave', () => {
+      if (isDown) {
+        jobTilesWrapper.style.animationPlayState = 'running';
+        isDown = false;
+      }
+    });
+  } else {
+    console.error('Job tiles wrapper not found.'); // Debugging line to check if job tiles wrapper is found
+  }
 });
-
-
-
-
-
