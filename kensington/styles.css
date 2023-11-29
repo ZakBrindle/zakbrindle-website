@@ -137,6 +137,18 @@ nav > .menu-container > ul > li > a::before {
   z-index: -1;
 }
 
+/* Default background color when at the top */
+nav > .menu-container > ul > li > a::before {
+  /* existing styles */
+  background-color: #001847; /* Original color */
+}
+
+/* Darker background color when scrolled */
+nav.scrolled > .menu-container > ul > li > a::before {
+  background-color: #000f29; /* Darker shade */
+}
+
+
 /* Hover effect for the main navigation links */
 nav > .menu-container > ul > li > a:hover::before {
   transform: scaleX(1);
@@ -1165,7 +1177,7 @@ footer {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 20px;
-  width: 40%;
+  width: 26%;
   position: absolute; /* Position it absolutely relative to the footer-section */
   top: -80px; /* Adjust this value to control how much it overlaps */
   left: 24%; /* Start from the middle */
