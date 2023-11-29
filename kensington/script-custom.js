@@ -187,11 +187,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-window.addEventListener('scroll', function() {
-  var nav = document.querySelector('nav'); // Adjust this selector to target your nav
-  if (window.scrollY === 0) {
-    nav.classList.remove('scrolled');
-  } else {
-    nav.classList.add('scrolled');
-  }
-});
+  // Wait for the DOM to fully load
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('header'); // Adjust this if your header has a different selector
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY < 800) {
+        // User is at the top of the page
+        header.style.backgroundColor = 'rgba(3, 3, 3, 0.438)';
+      } else {
+        // User has scrolled down
+        header.style.backgroundColor = 'rgba(3, 3, 3, 0.658)';
+      }
+    });
+  });
