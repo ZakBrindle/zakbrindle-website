@@ -1,0 +1,24 @@
+{
+  "name": "Coconut Milk - Portal",
+  "description": "Employee hub for recruitment resources.",
+  "version": "0.1",
+  "incognito": "split",
+  "chrome_url_overrides": {
+    "newtab": "new-tab.html"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+   "audioCapture"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://kensingtonconsulting.vincere.io/*",
+        "https://www.linkedin.com/*"
+      ],      
+      "js": ["velocityCheck.js"]
+    }
+  ],
+  "manifest_version": 2
+}

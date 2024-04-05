@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <div class="snowflakes"></div>
+	
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Coconut Milk</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="vendors/feather/feather.css">
+  
+  <link rel="stylesheet" href="css/coconut_milk.css">
+  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link id="themeStylesheet" rel="stylesheet" href="css/vertical-layout-light/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="images/favicon.png" />
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+  #BDTrackerBtn{
+ cursor: pointer;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+
+</style>
+
+
+
+</head>
+
+
+
+<body>
+
+  <div hidden id="tb-grunt-image">
+    <img src="" alt="Grunting Image">
+</div>
+
+
+
+<style>
+
+
+.snowflakes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    animation: snowfall 5s linear infinite;
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+
+</style>
+
+
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav style="z-index: 9999999999999999999999999999999999999999999999999999999999999999999999999;"  class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo mr-5" href="new-tab.html"><img src="images/logo3.png" style="height: 65px; margin-bottom: -5px;" class="mr-2" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="new-tab.html"><img src="images/logo-mini.png" alt="logo"/></a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          
+          
+
+
+        </button>
+
+        <!-- search bar -->
+        <link rel="stylesheet" href="css/searchbar.css">
+
+
+        <ul id="searchFiles-searchBar" class="navbar-nav mr-auto">
+          <li class="nav-item nav-search">
+            <form class="nav-link">
+              
+              <div class="input-group">
+                
+                <img src="images/files-image.png" style="max-height: 45px; max-width: 45px;" alt="Files Icon" class="logo">
+                <input type="text" class="form-control" id="searchFiles_input2" placeholder="terms, reference, requirements" aria-label="Search files" aria-describedby="searchFilesButton">
+                <div class="input-group-append">
+                  <button class="btn btn-sm btn-primary" type="button" id="searchFilesButton"><i class="fa fa-search" style="color:white"></i></button>
+                </div>
+              </div>
+            </form>
+          </li>
+        </ul>
+
+
+
+        <ul class="navbar-nav mr-auto">
+          <li id="linkedIn-search-element" class="nav-item nav-search">
+            <form class="nav-link">
+             
+              <style>
+#recruiter-messages-image:hover {
+    cursor: pointer;
+
+  
+}
+
+
+                  .flex-container {
+                      display: flex;
+                      align-items: center;
+                  }
+              
+                  .linkedin-pill-button {
+                      height: 32px;
+                      border-radius: 50px;
+                      border: none;
+                      outline: none;
+                      cursor: pointer;
+                      padding: 5px 20px;
+                      margin-left: 10px; /* added margin for spacing */
+                      transition: background-color 0.3s ease;
+                      background-color: transparent;
+                      border: 1px solid #ccc;  /* Add a thin border */
+                      line-height: 10px; /* Set line-height equal to the height of the button */
+                      font-size: 12px;
+                      color:dimgray;
+                  }
+              
+                  .linkedin-pill-button:active {
+                      transform: scale(0.95);
+                  }
+              
+                  .linkedin-pill-button.toggled {
+                      background-color: rgb(171, 243, 171);
+                  }
+
+                  .linkedin-pill-button.inactive {
+                      background-color: rgb(228, 228, 228);
+                  }
+              </style>
+            </form>
+          </li>
+        </ul>
+        
+        
+        <div hidden id="askAI_bar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item nav-search">
+            <form class="nav-link">
+              <div class="input-group">
+                <input type="text" class="form-control" id="searchFiles_input" placeholder="Can you list 20 metal additive OEM's in the US?" aria-label="Ask AI" aria-describedby="searchButton" style="width: 550px;">
+                <div class="input-group-append">
+                  <button class="btn btn-sm btn-primary green-button" type="button" id="searchButton">Ask AI</button>
+                </div>
+              </div>
+            </form>
+          </li>
+        </ul>
+      </div>
+
+
+        <div id="searchResultsPopup" class="popup-container" style="display: none;">
+          <div id="searchResultsContent" class="popup-content">
+            <!-- Search results will be dynamically added here -->
+          </div>
+        </div>
+  <!-- search bar end -->
+
+
+        <ul class="navbar-nav mr-lg-2">
+          <li class="nav-item nav-search d-none d-lg-block">
+            
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-nav-right">
+		<li>
+			
+		</li>
+
+    <li id="brand-colour-button" class="nav-item nav-profile dropdown">
+      <!-- Color palette button -->
+      <a hidden id="colorPaletteButton" class="palette-button">
+        <img src="images/colourpalette.png" alt="Color Palette">
+      </a>   
+      
+     
+        <!-- Other menu items... -->
+        
+    
+
+    </li>
+
+    <!-- Color palette menu -->
+<div style="display: none;" id="colorPaletteMenu" class="palette-menu"> 
+  <div class="color-squares-container">
+  <div class="color-square" style="font-size: 10px; background-color: #000186;" data-color="#000186">#000186</div>
+  <div class="color-square" style="font-size: 10px; background-color: #130266;" data-color="#130266">#130266</div>
+  <div class="color-square" style="font-size: 10px; background-color: #e85c0e;" data-color="#e85c0e">#e85c0e</div>
+  <div class="color-square" style="font-size: 10px; background-color: #6089e4;" data-color="#6089e4">#6089e4</div>
+  <div class="color-square" style="font-size: 10px; background-color: #00267a;" data-color="#00267a">#00267a</div>
+  <div class="color-square" style="font-size: 10px; background-color: #b7c0e8;" data-color="#b7c0e8">#b7c0e8</div>
+  <div class="color-square" style="font-size: 10px; background-color: #292929;" data-color="#292929">#292929</div>
+
+</div>
+<div id="palette-description-lbl" class="palette-description">Click to copy</div>
+</div>
+
+    <style>
+
+.palette-button:hover {
+  transform: scale(1.2);
+transition: transform 0.2s ease-in-out;
+z-index: 99999; /* A high value to ensure it's on top of everything else */
+}
+
+.palette-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Adjust as needed */
+    right: 0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: white;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.color-squares-container {
+    display: flex; /* Use flexbox for the squares */
+    flex-direction: row; /* Lay squares out in a row */
+    flex-wrap: nowrap; /* Prevent wrapping of squares */
+    justify-content: center; /* Center squares horizontally */
+}
+
+.color-square:hover {
+  transform: scale(1.2);
+transition: transform 0.2s ease-in-out;
+z-index: 99999; /* A high value to ensure it's on top of everything else */
+}
+
+.color-square {
+    width: 50px; /* Size of the color square */
+    height: 50px;
+    margin: 5px;
+    cursor: pointer;
+    color: white;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    flex: 0 0 auto; /* Prevent squares from growing or shrinking */
+}
+
+.palette-description {
+    text-align: center; /* Center the text horizontally */
+    margin-top: 10px; /* Add some space above the text */
+    font-family: sans-serif; /* Styling the font */
+    color: #333; /* Color for the text */
+    width: 100%; /* Ensure full width */
+}
+</style>
+
+
+
+
+    <li class="nav-item nav-profile dropdown">
+      <a class="nav-link dropdown-toggle" href="http://bard.google.com" id="bardButton">
+        
+  
+      </a>           
+    </li>
+		 <li class="nav-item nav-profile dropdown">
+            <a class="nav-link dropdown-toggle" href="http://www.google.co.uk" id="googleButton">
+              <img id="image" src="images/googleLogo.png" alt="profile"/>
+			  
+            </a>           
+          </li>
+         
+     
+          
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="icon-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_settings-panel.html -->
+      
+      <div class="theme-setting-wrapper">
+        <div hidden id="settings-trigger"><i class='fas fa-comment-dots'></i></div>
+        <div id="theme-settings" class="settings-panel">
+          <i class="settings-close ti-close"></i>
+          <p class="settings-heading">COCONUT AI</p>
+          <p class="settings-heading" id="aiMessage"><p>
+          <textarea placeholder="Type a prompt..." name="aiPrompt" rows="4" class="form-control" id="prompt"></textarea>
+        
+          <div class="sidebar-bg-options selected" type="button" id="submit-btn">SEND</div>
+          <div class="sidebar-bg-options" id="clearBtnAI">Clear</div>        
+		  
+		<p id="result-element"></p>
+          
+        </div>
+      </div>
+      <!-- partial -->
+	  
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+              <li class="nav-item">
+                  <a class="nav-link" href="new-tab.html">
+                      <i class="icon-grid menu-icon"></i>
+                      <span class="menu-title">Dashboard</span>
+                  </a>
+              </li>
+
+              <hr style="width:50%" , size="20" , color="white">
+
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" id="leads-form-elements" href="#leads-form-elements" aria-expanded="false" aria-controls="form-elements">
+                    <i class="icon-link menu-icon"></i>
+                    <span class="menu-title">Leads</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="leads-form-elements">
+                    <ul class="nav flex-column sub-menu">
+                      <li class="nav-item"><a class="nav-link" href="https://kensingtonconsulting.sharepoint.com/:x:/s/KensingtonTeam/EaWBUMzoQ0dIjRFFWIxoDn4B35eEV2_dB-IKetLywQ2h9w?e=dn5uwS">Additive 2023</a></li>
+                      <li class="nav-item"><a class="nav-link" href="https://kensingtonconsulting.sharepoint.com/:x:/s/KensingtonTeam/EaUpyE1A_D9FlEgLyyyGw-MBfGfPOsQVyJ4HHd5SH01CVQ?e=Toe9yD">Additive 2024</a></li>        
+                      <li class="nav-item"><a class="nav-link" href="https://kensingtonconsulting.sharepoint.com/:x:/s/KensingtonTeam/ES7uqqZvHpBDjc2evGPLEZQBHyIe4qW8GQxHylYSBtAdpw?e=FFLkEn">Machine Tools</a></li>
+                     
+                        <!--<li class="nav-item"><a class="nav-link" href="pages/forms/requirements_capture.html">Requirements Capture</a></li>-->
+                    </ul>
+                </div>
+                <div class="collapse" id="form-elements">
+                  <ul class="nav flex-column sub-menu">
+                    </ul>
+              </div>
+            </li>
+
+
+
+              <li hidden class="nav-item">
+                  <a class="nav-link" href="https://kensingtonconsulting.sharepoint.com/:x:/s/KensingtonTeam/EaWBUMzoQ0dIjRFFWIxoDn4B35eEV2_dB-IKetLywQ2h9w?e=dn5uwS" target="_blank">
+                      <i class="fa fa-history menu-icon"></i>
+                      <span class="menu-title">Additive Leads 2023</span>
+                  </a>
+              </li>
+
+              <li hidden class="nav-item">
+                <a class="nav-link" href="https://kensingtonconsulting.sharepoint.com/:x:/s/KensingtonTeam/EaUpyE1A_D9FlEgLyyyGw-MBfGfPOsQVyJ4HHd5SH01CVQ?e=Toe9yD" target="_blank">
+                    <i class="icon-link menu-icon"></i>
+                    <span class="menu-title">Additive Leads 2024</span>
+                </a>
+            </li>
+
+              <li hidden class="nav-item">
+                <a class="nav-link" href="https://kensingtonconsulting.sharepoint.com/:x:/s/KensingtonTeam/ES7uqqZvHpBDjc2evGPLEZQBHyIe4qW8GQxHylYSBtAdpw?e=FFLkEn" target="_blank">
+                    <i class="icon-link menu-icon"></i>
+                    <span class="menu-title">Machine Tool Leads</span>
+                </a>
+            </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="https://kensingtonconsulting.sharepoint.com/:x:/s/KensingtonTeam/ERrPOcjP4iRHv7NZPpPP1mcBaW0IGoOFvNnJxdYnoyGZ9w?e=pH4Arc&CID=EEBC45C5-75F2-4D03-829F-FDF5B62E0F21&wdLOR=cA669B11E-A3D3-432A-BA0E-36D3E99A22A8" target="_blank">
+                    <i class="fas fa-envelope-open-text menu-icon"></i>
+                    <span class="menu-title">Mailshot Tracker</span>
+                </a>
+            </li>
+
+              <li hidden class="nav-item">
+                <a class="nav-link" href="https://leadsearch.000webhostapp.com/">
+                  <i class="fa-solid fa-magnifying-glass menu-icon"></i>
+                    <span class="menu-title">Search Leads</span>
+                </a>
+            </li>
+              <li hidden class="nav-item">
+                  <a class="nav-link" href="https://kensingtonconsulting.sharepoint.com/:f:/s/KensingtonTeam/EsKiZfD_ECNAiSRxscxQuPkBusEsBSytJH-eo1X-wcCMTQ?e=3tMrZz" target="_blank">
+                      <i class="icon-paper menu-icon"></i>
+                      <span class="menu-title">Spec CVs</span>
+                  </a>
+              </li>
+           
+              
+			  
+
+              <hr style="width:50%" , size="20" , color="white">
+          
+              <li class="nav-item">
+                <a class="nav-link" href="http://zakbrindle.com/kensington/servicemodel/">
+                    <i class="	fa fa-shopping-cart menu-icon"></i>
+                    <span class="menu-title"> Service Model</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="pages/forms/Performance To Target.html">
+                  <i class="fa fa-bullseye menu-icon menu-icon"></i>
+                  <span  class="menu-title"> % to Target Calc</span>
+              </a>
+          </li>
+          
+          
+          <li id="newSiteBtn_user" class="nav-item">
+            <a class="nav-link" href="pages/tables/KAwebsite.html">
+                <i class="fa-solid fa-rocket menu-icon menu-icon"></i>
+                <span class="menu-title"> New Website</span>
+            </a>
+        </li>
+
+        <li hidden id="newSiteBtn_admin" class="nav-item">
+          <a class="nav-link" href="pages/tables/KAwebsite_admin.html">
+              <i class="fa-solid fa-rocket menu-icon menu-icon"></i>
+              <span class="menu-title"> New Website</span>
+          </a>
+      </li>
+   
+       
+     
+
+
+      
+
+      <li style="display: none;"id="vincere_audit_menu_btn" class="nav-item">
+        <a class="nav-link" target="_blank" href="https://kensingtonconsulting.sharepoint.com/:x:/s/KensingtonTeam/EVpKpPql98NJqjy4qDF5dbgByq6BT92RuOeEgU1o5G5HcQ?e=fYHzml">
+            <i id="vinere_audit_tracker_btnIcon" style="color: #d14d01;" class="icon-paper menu-icon"></i>
+            <span id="vinere_audit_tracker_btnTxt" style="color: #d14d01;" class="menu-title"> Vincere Auto Audit</span>
+        </a>
+    </li>
+
+
+
+
+
+			   
+              <hr style="width:50%" , size="20" , color="white">
+
+
+
+              <li class="nav-item">
+                  <a class="nav-link" data-toggle="collapse" id="cribSheets-form-elements" href="#cribSheets-form-elements" aria-expanded="false" aria-controls="form-elements">
+                      <i class="icon-columns menu-icon"></i>
+                      <span class="menu-title">Crib Sheets</span>
+                      <i class="menu-arrow"></i>
+                  </a>
+                  <div class="collapse" id="cribSheets-form-elements">
+                      <ul class="nav flex-column sub-menu">        
+                        <li id="newCan_v4" class="nav-item"><a class="nav-link" href="pages/forms/new_candidate v4.2.html">New Candidate</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pages/forms/reference_check v4.2.html">Reference Check</a></li>  
+
+                          <!--<li class="nav-item"><a class="nav-link" href="pages/forms/requirements_capture.html">Requirements Capture</a></li>-->
+                      </ul>
+                  </div>
+                  <div class="collapse" id="form-elements">
+                    <ul class="nav flex-column sub-menu">
+                      </ul>
+                </div>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="pages/ui-features/terms.html">
+                    <i class="	fas fa-file-signature menu-icon"></i>
+                    <span class="menu-title"> Terms & Conditions</span>
+                </a>
+            </li>
+
+              <li class="nav-item">
+                  <a class="nav-link" href="pages/forms/basic_elements.html">
+                      <i class="icon-contract menu-icon"></i>
+                      <span class="menu-title">Templates</span>
+                  </a>
+              </li>
+
+
+              <li hidden class="nav-item">
+                  <a class="nav-link" href="pages/ui-features/downloads.html">
+                      <i class="icon-download menu-icon"></i>
+                      <span class="menu-title">Downloads</span>
+                  </a>
+              </li>
+              <hr style="width:50%" , size="20" , color="white">
+
+             
+
+          
+			  
+			  
+			  
+
+              <li>
+                <center><img id="halloweenGhostImage" style="cursor: pointer; max-width: 100px; display: none;" src="images/ghost1.png">         </center>
+              </a>
+            </li>
+
+            <li>
+              <center><img id="festive-navMenu-image" style="cursor: pointer; max-width: 100px; display: none;" src="images/christmas_vectors/snowman1 (1).png">         </center>
+            </a>
+          </li>
+
+            <li>
+              <div hidden class="input-group-prepend">   
+                <input style="width: 90%; margin-left: 10px;" id="searchbar" type="text" class="form-control" aria-label="Search" placeholder="Search files">			 
+              </div>
+              <div id="dropdown"></div>
+            </li>
+            
+            
+            
+            
+            <!-- CALL TIME LEADERBOARD -->
+            
+            
+            
+          </ul>
+          
+        </nav>
+        
+        
+     
+
+       
+
+   <!-- partial -->
+  
+   <div hidden id="job-advert-main-page-section" style="z-index: 99999999999999999999; width: 100%;">
+    <div class="content-wrapper">
+      <center>
+        
+        <div style="height: 570px; width: 98%; overflow: hidden;">
+            <iframe id="iframe_jobAd" width="100%" height="650" frameborder="0" scrolling="no" src="https://kensingtonconsulting.sharepoint.com/sites/KensingtonTeam/_layouts/15/Doc.aspx?sourcedoc={7263ac50-dccc-4dbc-b36c-8940a889f182}&action=embedview&wdAllowInteractivity=False&Item='Job%20Adverts'!A1%3AG18&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
+        </div>
+
+        <br>
+
+        <button type="button" id="main-menu-btn-job-ad" class="btn btn-primary mr-2" style="margin-bottom: 200px;">Main Menu</button>
+    </center>
+
+    </div>
+  </div>
+
+	  
+      <!-- partial -->
+      <div hidden id="main-panel-no-login" style="width: 100%">
+        <div class="content-wrapper">
+          <div class="row" style="width: 100%">
+            <div class="col-md-12 grid-margin">
+              <div class="row">
+                <div  class="col-12 col-xl-8 mb-4 mb-xl-0">
+                 <center>
+                  <br><br>  <br><br>
+                  <h3 id="welcome-pleaselogin" class="font-weight-bold">Welcome</h3>
+                     
+					  
+					 
+
+                  <h6 id="systemsReport-login" class="font-weight-normal mb-0" style="font-size: 19px;">Login to use Coconut Milk</h6>
+                </center>
+                  
+                  <br>
+                  
+               
+                  <div class="login-element">
+                    <div class="logo-login">
+                      <img src="images/target%20logo.png" alt="logo" width="150" height="150">
+                    </div>
+                    <br><br><br>
+                    <div class="login-form">
+                        <input type="text" id="signIn_name_textbox" class="rounded-input" placeholder="Username">
+                        <button type="button" style="width: 80%;" id="login_btn" class="btn btn-outline-primary btn-fw">Login</button>
+                    </div>
+                </div>
+                 
+                 
+                 <style>
+.login-element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Change this line */
+    height: 100vh;
+    padding-top: 50px;  /* Add some padding at the top */
+}
+
+.logo-login {
+    margin-bottom: 20px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rounded-input {
+    border-radius: 12px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+                 </style>
+                 
+                 
+                 
+                 
+                 
+                  
+                 
+                </div>
+             
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 grid-margin">
+              </div>
+              </div>
+
+          </div>
+      </div>
+
+      
+
+      <div id="main-panel-logged-in" class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-12 grid-margin">
+              
+<br>
+
+<style>
+  /* Assuming the color from the image is approximately #555555 */
+  .container {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 32px;
+      color: #0007860e; /* This is a placeholder, adjust to the exact color from your image */
+      margin-top:-50px;      
+      margin-bottom:-25px;      
+
+      gap: 100px; /* Increase or decrease this value to adjust the gap */
+  }
+
+  .column {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+</style>
+
+<div id="company_values" class="container">
+<div class="column">QUALITY</div>
+<div class="column">COMMUNICATION</div>
+<div class="column">COMMITMENT</div>
+<div class="column">KNOWLEDGE</div>
+</div>
+<br>
+              <div class="row">
+                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+
+
+                  <h3 id="WelcomeMessage" class="font-weight-bold">Dashboard</h3>
+                     
+					  
+					 
+
+                  <h6 id="systemsReport" class="font-weight-normal mb-0" style="font-size: 19px;">Quick access to key platforms.</a>&nbsp;&nbsp;
+                &nbsp;&nbsp;</h6>
+                  
+                  
+                  <div hidden class="quickbutton-topribbon">
+                    <div id="quickbutton-main">
+                      <input class="quicklink-button" id="btn_newCandidate" height="100" width="100" type="image" src="images/New%20folder/NewCandidate.png" />
+                      <input class="quicklink-button" id="btn_conductingSales" height="100" width="100" type="image" src="images/New%20folder/ConductingSales.png"/> 
+                      <input class="quicklink-button" id="btn_requirementsCapture" height="100" width="100" type="image" src="images/New%20folder/RequirementsCapture.png"/> 
+                  </div>
+                  
+
+               
+
+
+                
+         
+                 
+
+                  <style>
+              
+
+#new_website_img {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  margin-top:-20px;
+  margin-left:510px;
+}
+
+#website_link:hover {
+  cursor: pointer;
+}
+                  </style>
+               
+               
+
+                <div hidden id="quickbutton-admin-tuesday">
+                  <input type="button" id="btn_boardMeeting_tuesday" class="btn btn-primary btn-add" style="margin-top: 30px;" value="Tuesday Pipeline Review">
+
+                </div>
+
+                <div hidden id="quickbutton-admin-thursday">
+                  <input type="button" id="btn_jobs_thursday" class="btn btn-primary btn-add" style="margin-top: 30px;" value="LinkedIn Job Adverts">
+
+                </div>
+
+                </div>
+
+                <div id="main-panel-connection-issues" style="display: none; width: 100%">
+                  <div class="content-wrapper">
+                   
+                    <button id="refresh-button-connectionIssues" style="font-size: 35px; width: 350px; height: 50px" class="linkedin-pill-button">Refresh</button>
+                         
+                              <div class="col-12 col-xl-8 mb-4 mb-xl-0" style="padding-top: 100px; display: flex; align-items: center; justify-content: center;">
+                                  
+                                      <img id="connection_image" src="images/connection-issues/connection1.png" style="padding-left: 400px; width: 180%; height: auto; display: block; margin: 0 auto;">
+                                
+                              </div>
+                          
+                     
+              
+              
+                    <div class="row">
+                      <div class="col-md-12 grid-margin">
+                        </div>
+                        </div>
+              
+                    </div>
+                </div>
+
+                </div>
+
+              
+      
+             
+              </div>
+            </div>
+          </div>
+
+       
+          <div class="row">
+
+
+           
+
+          <!-- NEW PEOPLE DIV -->
+          <div id="tools&platforms_div" class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+<div id="festive-card-snow" style="display: none;">
+              <img src="images/christmas_vectors/snow-corner.png" style="width: 10%; height: auto; position: absolute; top: 0; right: 0; z-index: 100; margin-right: -14px; margin-top: -14px;">
+
+              <img src="images/christmas_vectors/snow-medium.png" style="width: 25%; height: auto; position: absolute; top: 0; margin-top: 10px; left: 50%; z-index: 100; transform: translate(-60%, -50%);">
+            </div>
+
+              <div class="card-body">
+
+<!-- button hover css -->          
+<style>
+.quicklink-button:hover {
+transform: scale(1.2);
+transition: transform 0.2s ease-in-out;
+z-index: 99999; /* A high value to ensure it's on top of everything else */
+
+}
+
+.quicklink-button {
+    position: relative; /* or absolute, fixed, or sticky, depending on your needs */
+    z-index: 9999; /* A high value to ensure it's on top of everything else */
+}
+
+</style>
+
+
+<div >
+                  <h4 class="card-title">Tools & Platforms</h4>
+               
+                  <div class="template-demo">
+   <input class="quicklink-button" id="buttonLinkedIn" height="100" width="100" type="image" src="images/New%20folder/box/linkedin-box.png" /> 
+   <input class="quicklink-button" id="buttonRecruiter" height="100" width="100" type="image" src="images/New%20folder/box/recruiter-box.png" /> 
+   <input class="quicklink-button" id="buttonGoogle" height="100" width="100" type="image" src="images/New%20folder/box/google-box.png" /> 
+   <input class="quicklink-button" id="buttonGMaps" height="100" width="100" type="image" src="images/New%20folder/box/google-maps-box.png" /> 
+   <input class="quicklink-button" id="buttonVincere" height="100" width="100" type="image" src="images/New%20folder/box/vincere-box.png" />
+   
+   <input class="quicklink-button" id="buttonVincereTasks" height="100" width="100" type="image" src="images/New%20folder/box/vincere-tasks-box.png" />
+ 
+   
+   
+   <input class="quicklink-button" id="buttonMicrosoftOffice" height="100" width="100" type="image" src="images/New%20folder/box/office-box.png" /> 
+   
+   
+          <div id="officeButtons" style="display: none; position: absolute; width: 540px; z-index: 10000000000000000000000000000000;">
+            <input class="quicklink-button" id="buttonWord" height="100" width="100" type="image" src="images/New%20folder/box/word-box.png" />
+            <input class="quicklink-button" id="buttonPowerPoint" height="100" width="100" type="image" src="images/New%20folder/box/powerpoint-box.png" />
+            <input class="quicklink-button" id="buttonExcel" height="100" width="100" type="image" src="images/New%20folder/box/excel-box.png" />            
+   <input class="quicklink-button" id="buttonOutlook" height="100" width="100" type="image" src="images/New%20folder/box/outlook-box.png" />
+   
+   <input class="quicklink-button" id="buttonSharepoint" height="100" width="100" type="image" src="images/New%20folder/box/sharepoint.png" /> 
+        </div>
+   
+        <style>
+          #officeButtons {
+    display: none;
+    position: fixed; /* or 'absolute', depending on your layout */
+    top: 50%; /* Adjust as needed */
+    left: 50%; /* Adjust as needed */
+    transform: translate(-50%, -10%);
+    background-color: white; /* or any other color */
+    border: 1px solid #ddd; /* or any other border styling */
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional */
+    z-index: 99999990000000000000000; /* Ensure it's above other elements */
+    
+}
+
+
+
+        </style>
+ 
+   <input class="quicklink-button" id="buttonHinterview" height="100" width="100" type="image" src="images/New%20folder/box/hinterview-box.png" /> 
+   
+  
+   
+   <input class="quicklink-button" id="buttonSignable" height="100" width="100" type="image" src="images/New%20folder/box/signable-box.png" /> 
+  
+   
+   <input class="quicklink-button" id="buttonKensingtonAdditive" height="100" width="100" type="image" src="images/New%20folder/box/KensingtonAdditive-box.png" /> 
+  
+   <input class="quicklink-button" id="buttonChatGPT" height="100" width="100" type="image" src="images/New%20folder/box/chatgpt-box.png" /> 
+   
+  
+   <input class="quicklink-button" id="buttonZoomInfo" height="100" width="100" type="image" src="images/New%20folder/box/zoominfo-box.png" /> 
+   
+  
+  
+   <input class="quicklink-button" id="buttonOneUp" height="100" width="100" type="image" src="images/New%20folder/box/oneup-box.png" />
+   
+
+    <style>
+        
+      @keyframes pulsate {
+    0% { transform: scale(1); }    
+    50% { transform: scale(1.2); } 
+    100% { transform: scale(1); }   
+}
+
+.pulsating {
+    animation: pulsate 2s infinite; 
+}
+
+    </style>
+    
+   <input hidden class="quicklink-button" id="buttonCanva" height="100" width="100" type="image" src="images/New%20folder/box/canva.png" />
+   <input hidden class="quicklink-button" id="buttonMailchimp" height="100" width="100" type="image" src="images/New%20folder/box/mailchimp.png" />
+
+   
+   <input hidden class="quicklink-button" id="button3CXrecord" height="100" width="100" type="image" src="images/New%20folder/box/3CX-rec.png" />
+ 
+
+   <br><br>
+   &nbsp;&nbsp;
+   <br>  <br>
+   <style>
+
+
+
+
+
+    /* Initially hide the quick-tools-div */
+    #quick-tools-div {
+      display: none;
+    }
+
+    /* Style for the button with a dropdown arrow */
+    #tools-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      outline: none;
+    }
+
+    #tools-button:after {
+      content: "\25BC"; /* Unicode down arrow */
+      padding-left: 10px;
+    }
+  </style>
+
+    <div id="quick-tools-div">
+
+   
+   
+      
+      <input class="quicklink-button" id="buttonOCR" height="100" width="100" type="image" src="images/New%20folder/ImageToText.fw.png" /> 
+      &nbsp;&nbsp;
+      <input class="quicklink-button" id="buttonTimezone" height="100" width="100" type="image" src="images/New%20folder/WorldClock.fw.png" /> 
+     
+      &nbsp;&nbsp; 
+      <input class="quicklink-button" id="buttonPDFWord" height="100" width="100" type="image" src="images/New%20folder/PDFTOWORD.fw.png" /> 
+   &nbsp;&nbsp;
+   <input class="quicklink-button" id="buttonEditPDF" height="100" width="100" type="image" src="images/New%20folder/EDITPDF.fw.png" /> 
+   
+   &nbsp;&nbsp;
+   <input class="quicklink-button" id="buttonMetaData" height="100" width="100" type="image" src="images/New%20folder/Metadata.fw-fpng.png" /> 
+   
+   &nbsp;&nbsp;
+    </div>               
+
+    <input class="quicklink-button" hidden id="btn_fn-exhibitorlist" height="100" width="100" type="image" src="images/New%20folder/box/exhibitors.png"/> 
+    <input class="quicklink-button" hidden id="btn_fn-map" height="100" width="100" type="image" src="images/New%20folder/box/formnext-map.png" /> 
+    <input hidden class="quicklink-button" id="buttonPhotopea" height="100" width="100" type="image" src="images/New%20folder/box/photopea.png" />
+    
+    
+    
+    <input hidden class="quicklink-button" id="btn_youtube" height="100" width="100" type="image" src="images/New%20folder/youtube_logo.png" />
+    <input hidden class="quicklink-button" id="btn_keep" height="100" width="100" type="image" src="images/New%20folder/keep_logo.png"/> 
+    <input hidden class="quicklink-button" id="btn_whatsapp" height="100" width="100" type="image" src="images/New%20folder/box/whatsapp_logo.png" />
+    <input hidden class="quicklink-button" id="btn_sc" height="100" width="100" type="image" src="images/New%20folder/box/sc_logo.png" />
+    <input hidden class="quicklink-button" id="btn_chess" height="100" width="100" type="image" src="images/New%20folder/box/chess_logo.png" />
+    <input hidden class="quicklink-button" id="btn_geforce" height="100" width="100" type="image" src="images/New%20folder/box/geforce-box.png" />
+    
+ 
+
+</div>
+
+
+               
+              </div>
+
+
+            </div>    <!-- END OF TOOLS%PLATFORMS-->
+         
+
+
+            </div>
+          </div>
+
+
+          <style>
+            /* Styling for the parent div to center the image */
+            .map-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                width: 100%;
+                height: 600px;  /* Adjust the height according to your requirements */
+                overflow: hidden;
+            }
+    
+            .map-container img {
+                max-width: 100%;
+                height: auto;
+            }
+    
+            /* Positioning and styling for the time zones */
+            .timezone {
+                position: absolute;
+                text-align: center;
+                width: 25%;
+            }
+    
+            .timezone iframe {
+                display: block;
+                margin: 0 auto;
+            }
+    
+            .pst { left: -2%; top: 28%; }
+            .mst { left: 18%; top:  28%; }
+            .cst { left: 42%; top:  28%; }
+            .est { left: 66%; top:  28%; }
+        </style>
+
+
+
+
+
+          
+            <!-- END OF NEW PEOPLE DIV -->
+
+              <div style="margin-top: -30px; height: 570px; overflow: hidden;" class="col-md-6 grid-margin transparent">
+
+                <style>
+            .timezone-tooltip {
+  position: fixed;
+  bottom: 30px;  /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4B49AC;
+  color: #fff;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 15px;
+  padding:15px;
+  display: none;
+  z-index: 1000;
+}
+
+
+                </style>
+<div id="timezone-container">
+                <div id="timezone-new-map" style="width: 110%;" class="map-container">
+                  <img id="usmap_image" style="width: 110%;" src="images/USMap.png" alt="US Timezones Map">
+                
+                  <!-- Pacific Time -->
+                  <div class="timezone pst">
+                    <br>
+                    <iframe src="https://free.timeanddate.com/clock/i92juhp0/n137/szw80/szh80/hocbbb/hbw6/cf100/hgr0/fas16/fdi64/mqc000/mqs4/mql20/mqw2/mqd94/mhc000/mhs3/mhl20/mhw2/mhd94/mmc000/mml10/mmw1/mmd94/hmr7/hsce3b400/hss1/hsl90" frameborder="0" width="80" height="80"></iframe>
+
+                      <iframe src="https://free.timeanddate.com/clock/i8g5irir/n137/tluk/fn6/fs32/fcfff/tct/pct/pt6/th1/ts1" frameborder="0" width="82" height="44" allowtransparency="true"></iframe>
+                      <span class="time-zone" data-tip="Pacific Time is 8 hours behind" style="font-size: 15px; color: #00000096; margin-top: -15px;">PT</span>
+
+                    </div>
+                      <!-- Mountain Time -->
+                      <div class="timezone mst">
+                        <br>
+                        <iframe src="https://free.timeanddate.com/clock/i92juhp0/n75/szw80/szh80/hocbbb/hbw6/cf100/hgr0/fas16/fdi64/mqc000/mqs4/mql20/mqw2/mqd94/mhc000/mhs3/mhl20/mhw2/mhd94/mmc000/mml10/mmw1/mmd94/hmr7/hscff498b/hss1/hsl90" frameborder="0" width="80" height="80"></iframe>
+
+                        <iframe src="https://free.timeanddate.com/clock/i8g5irir/n80/tluk/fn6/fs32/fcfff/tct/pct/pt6/th1/ts1" frameborder="0" width="82" height="44" allowtransparency="true"></iframe>
+                        <span class="time-zone" data-tip="Mountain Time is 7 hours behind" style="font-size: 15px; color: #00000096; margin-top: -15px;">MT</span>
+                    </div>
+                
+                    <!-- Central Time -->
+                    <div class="timezone cst">
+                      <br>
+                      <iframe src="https://free.timeanddate.com/clock/i92juhp0/n64/szw80/szh80/hocbbb/hbw6/cf100/hgr0/fas16/fdi64/mqc000/mqs4/mql20/mqw2/mqd94/mhc000/mhs3/mhl20/mhw2/mhd94/mmc000/mml10/mmw1/mmd94/hmr7/hsc270082/hss1/hsl90" frameborder="0" width="80" height="80"style="margin-bottom: 10px;" ></iframe>
+
+                    
+                        <iframe src="https://free.timeanddate.com/clock/i8kl8dl9/n64/tluk/fs32/fcfff/tct/pct/ts1" frameborder="0" width="82" height="39" allowtransparency="true"></iframe>
+                        <span class="time-zone" data-tip="Central Time is 6 hours behind" style="font-size: 15px; color: #00000096; margin-top: -15px;">CT</span>
+                    </div>
+                
+                    <!-- Eastern Time -->
+                    <div class="timezone est">
+                      <br>
+                      <iframe src="https://free.timeanddate.com/clock/i92juhp0/n179/szw80/szh80/hocbbb/hbw6/cf100/hgr0/fas16/fdi64/mqc000/mqs4/mql20/mqw2/mqd94/mhc000/mhs3/mhl20/mhw2/mhd94/mmc000/mml10/mmw1/mmd94/hmr7/hsc8430d9/hss1/hsl90" frameborder="0" width="80" height="80"></iframe>
+
+                        <iframe src="https://free.timeanddate.com/clock/i8g5irir/n179/tluk/fn6/fs32/fcfff/tct/pct/pt6/th1/ts1" frameborder="0" width="82" height="44" allowtransparency="true"></iframe>
+                        <span class="time-zone" data-tip="Eastern Time is 5 hours behind" style="font-size: 15px; color: #00000096; margin-top: -15px;">ET</span>
+
+                    </div>
+                    <br>
+                    <div class="timezone-tooltip" id="tooltip"></div>
+                </div>
+<br><br><br><br>
+                <div id="old-tiled-timezones" style="display: 'none';">
+                  <div class="row">
+                      <div style="min-width: 170px; max-height: 120px;"class="col-md-6 mb-4 stretch-card transparent">
+                          <div class="card card-tale">
+                              <div class="card-body">
+                                  <p class="fs-30 mb-2">PT<br></p>
+                                  <p class="fs-30 mb-2">
+                                      <iframe src="https://free.timeanddate.com/clock/i8g5irir/n137/tluk/fn6/fs32/fcfff/tct/pct/pt6/th1/ts1" frameborder="0" width="82" height="44" allowtransparency="true"></iframe>
+                                  </p>
+                                 
+                              </div>
+                          </div>
+                      </div>
+                      <div style="min-width: 170px; max-height: 120px;" class="col-md-6 mb-4 stretch-card transparent">
+                          <div class="card card-dark-blue">
+                              <div class="card-body">
+                                  <p class="fs-30 mb-2">MT<br></p>
+                                  <p class="fs-30 mb-2">
+                                      <iframe src="https://free.timeanddate.com/clock/i8g5irir/n80/tluk/fn6/fs32/fcfff/tct/pct/pt6/th1/ts1" frameborder="0" width="82" height="44" allowtransparency="true"></iframe>
+
+                                  </p>
+                                
+                              </div>
+                          </div>
+                      </div>                     
+                  </div>
+                
+                  <div class="row">
+                      <div style="min-width: 170px; max-height: 120px;" class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
+                          <div class="card card-light-blue">
+                              <div class="card-body">
+                                  <p class="fs-30 mb-2">CT<br></p>
+                                  <p class="fs-30 mb-2">
+                                     <!-- <iframe src="https://free.timeanddate.com/clock/i8g5irir/n155/tluk/fn6/fs32/fcfff/tct/pct/pt6/th1/ts1" frameborder="0" width="82" height="44" allowtransparency="true"></iframe>-->
+									<iframe src="https://free.timeanddate.com/clock/i8kl8dl9/n64/tluk/fs32/fcfff/tct/pct/ts1" frameborder="0" width="82" height="39" allowtransparency="true"></iframe>
+
+
+
+
+                                  </p>
+                               
+                              </div>
+                          </div>
+                      </div>
+                      <div style="min-width: 170px; max-height: 120px;" class="col-md-6 stretch-card transparent">
+                          <div class="card card-light-danger">
+                              <div class="card-body">
+                                  <p class="fs-30 mb-2">ET<br></p>
+                                  <p class="fs-30 mb-2">
+                                      <iframe src="https://free.timeanddate.com/clock/i8g5irir/n179/tluk/fn6/fs32/fcfff/tct/pct/pt6/th1/ts1" frameborder="0" width="82" height="44" allowtransparency="true"></iframe>
+
+
+                                  </p>
+                                 
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+</div>
+
+
+
+              </div>
+
+  
+          </div>
+           
+        
+            <style>
+             
+
+              #stats_chart {
+                  margin-top: 20px;
+                  margin-bottom: 20px;
+                  text-align: center;
+                 
+              }
+          </style>
+         
+       
+
+        
+           <div class="row">
+               <!-- TO DO LIST CARD TRACKER GOES HERE -->
+
+
+               <div hidden class="col-md-6 grid-margin stretch-card">
+                   <div class="card tale-bg">
+                       <div class="card-people flex-column justify-content-start mt-auto">
+
+                           <ul id="taskList"></ul>
+                           <br>
+                           <div class="input-group-prepend">
+                               <input id="taskInput" type="text" class="form-control" placeholder="Enter task">
+                               <input type="button" id="buttonAddTask" class="btn btn-primary btn-add" value="Add Task">
+                               <button type="button" id="buttonDeleteTask" class="btn btn-danger btn-delete" value="Delete">
+                                   <i class="fas fa-trash"></i>
+                               </button>
+                               <input hidden type="button" id="buttonDeleteAllTasks" class="btn btn-primary btn-danger btn-delete" value="Delete All">
+
+                           </div>
+
+
+
+
+                           <style>
+                               #taskList {
+                                   list-style: none;
+                                   margin: 0;
+                                   padding-left: 20px;
+                                   padding-right: 20px;
+                                   display: grid;
+                                   grid-template-columns: repeat(2, 1fr);
+                                   grid-gap: 20px;
+                               }
+
+                                   #taskList li {
+                                       background-color: #fff;
+                                       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                                       padding: 20px;
+                                       font-size: 16px;
+                                       line-height: 1.5;
+                                       transition: box-shadow 0.2s;
+                                   }
+
+                                       #taskList li:hover {
+                                           box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                                       }
+
+                                       #taskList li.active {
+                                           background-color: rgb(218, 253, 222);
+                                       }
+
+                               #taskInput {
+                                   margin-right: 10px;
+                               }
+
+                               .btn-add {
+                                   margin-right: 10px;
+                               }
+                           </style>
+
+                       </div>
+                   </div>
+               </div>
+
+
+
+
+
+     
+        
+           </div>
+
+          
+               <div class="row"></div>
+               <div class="row"></div>
+               <div class="row"></div>
+               <div class="row"></div>
+           </div>
+
+         
+
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+           <a href="http://www.zakbrindle.com/">
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span></a>
+          </div>
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            
+          </div>
+
+          
+        
+
+        </footer> 
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>   
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+
+  <!-- plugins:js -->
+  <script src="vendors/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="vendors/chart.js/Chart.min.js"></script>
+  <script src="vendors/datatables.net/jquery.dataTables.js"></script>
+  <script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+  <script src="js/dataTables.select.min.js"></script>
+ <script src="vendors/typeahead.js/typeahead.bundle.min.js"></script>
+  <script src="vendors/select2/select2.min.js"></script>
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="js/off-canvas.js"></script>
+  <script src="js/hoverable-collapse.js"></script>
+  <script src="js/template.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/todolist.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="js/dashboard.js"></script>
+
+  
+  <script src="js/timezone.js"></script>
+  
+  <script src="js/Chart.roundedBarCharts.js"></script>
+    <script src="js/select2.js"></script>
+	
+  
+
+
+  <script src="js/seasonal-extras-script.js"></script>
+  
+  
+
+  <script src="js/colourPalette.js"></script>
+
+
+
+
+  <!-- FOR SAVING DATA, LOCALSCRIPT ALTERNATIVE WEBSQL-->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.min.css" />
+ <!-- <script src="js/worldcup.js"></script>-->
+  <!-- End custom js for this page-->
+</body>
+
+</html>
+
