@@ -134,9 +134,15 @@ function createCustomModel()
   }// end of modelSelected = true
 }
 
+function checkURL() {
+  if (!window.location.href.includes("zakbrindle.com")) {
+      window.close();
+  }
+}
+
 
 window.onload = function() {
-
+  checkURL();
 
 // add listener to FREE REPLACEMENT
 var items = document.querySelectorAll(".freeReplacement");
@@ -159,6 +165,8 @@ for (var i = 0; i < items.length; i++) {
         }
     });
 }
+
+secondCheck();
   
 // add a listener to createModelBtn 
   document.getElementById("createModelBtn").addEventListener("click", createCustomModel);
@@ -201,6 +209,12 @@ function getURL() {
  
   
   
+}
+
+function secondCheck() {
+  if (!window.location.href.includes("rindle")) {
+      window.close();
+  }
 }
 
 
@@ -327,8 +341,12 @@ items.forEach(item => {
    popup.focus();
  });
 
-
+ secondCheck();
 // end of on load
+
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
 }
 
 // end of script
