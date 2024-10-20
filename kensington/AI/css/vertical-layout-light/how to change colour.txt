@@ -1,7 +1,0 @@
-4B49AC - ORIGINAL
-
-
-Find and replace the above code in the CSS
-
-
-#26333B - GREEN/DARK
