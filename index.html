@@ -153,8 +153,8 @@ function scrollToAboutMe()
 
 #music-widget button img {
     margin-right: 5px; /* Add spacing between image and text */
-    width: 20px; /* Adjust image size as needed */
-    height: 20px;
+    width: 60px; /* Adjust image size as needed */
+    height: 60px;
 }
 	</style>
 
@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
     playPauseButton.addEventListener('click', function() {
         if (!isPlaying) {
             podcastAudio.play();
-            playPauseButton.innerHTML = '<img src="./play-icon.png" alt="Pause">Pause Podcast';
+            playPauseButton.innerHTML = '<img src="./pause-icon.png" alt="Pause">';
         } else {
             podcastAudio.pause();
             playPauseButton.innerHTML = '<img src="./play-icon.png" alt="Play">Listen to the podcast';
