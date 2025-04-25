@@ -127,52 +127,72 @@ function scrollToAboutMe()
 	<style>
 		/* Floating Music Player Widget Styles */
 		#music-widget {
-			position: fixed;
-			bottom: 20px;
-			left: 20px;
-			background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
-			padding: 10px 20px;
-			border-radius: 5px;
-			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-			z-index: 1000; /* Ensure it stays on top of other content */
-			cursor: pointer;
-		}
-		
-		#music-widget button {
-			background: none;
-			border: none;
-			padding: 0;
-			font-size: 16px;
-			cursor: pointer;
-		}
-		</style>
-		
-		<div id="music-widget">
-			<button id="play-pause-button">Listen to the podcast</button>
-			<audio id="podcast-audio" src="./podcast.mp3" preload="auto"></audio>
-		</div>
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure it stays on top of other content */
+    cursor: pointer;
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Vertically center items */
+}
 
-		<script>
-			document.addEventListener('DOMContentLoaded', function() {
-				const musicWidget = document.getElementById('music-widget');
-				const playPauseButton = document.getElementById('play-pause-button');
-				const podcastAudio = document.getElementById('podcast-audio');
-				let isPlaying = false;
-			
-				playPauseButton.addEventListener('click', function() {
-					if (!isPlaying) {
-						podcastAudio.play();
-						playPauseButton.textContent = 'Pause Podcast';
-					} else {
-						podcastAudio.pause();
-						playPauseButton.textContent = 'Listen to the podcast';
-					}
-					isPlaying = !isPlaying;
-				});
-			});
-			</script>
+#music-widget button {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Vertically center items */
+    margin: 0 5px; /* Add some spacing between buttons */
+}
 
+#music-widget button img {
+    margin-right: 5px; /* Add spacing between image and text */
+    width: 20px; /* Adjust image size as needed */
+    height: 20px;
+}
+	</style>
 
+<div id="music-widget">
+    <button id="back-button">
+        <img src="./back-icon.png" alt="Back 10 Seconds">
+    </button>
+    <button id="play-pause-button">
+        <img src="./play-icon.png" alt="Play">
+        Listen to the podcast
+    </button>
+    <audio id="podcast-audio" src="./podcast.mp3" preload="auto"></audio>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const musicWidget = document.getElementById('music-widget');
+    const playPauseButton = document.getElementById('play-pause-button');
+    const backButton = document.getElementById('back-button');
+    const podcastAudio = document.getElementById('podcast-audio');
+    let isPlaying = false;
+
+    playPauseButton.addEventListener('click', function() {
+        if (!isPlaying) {
+            podcastAudio.play();
+            playPauseButton.innerHTML = '<img src="./play-icon.png" alt="Pause">Pause Podcast';
+        } else {
+            podcastAudio.pause();
+            playPauseButton.innerHTML = '<img src="./play-icon.png" alt="Play">Listen to the podcast';
+        }
+        isPlaying = !isPlaying;
+    });
+
+    backButton.addEventListener('click', function() {
+        podcastAudio.currentTime -= 10;
+    });
+});
+</script>
 
 	<div id="fh5co-services" class="fh5co-bg-section">
 		<div class="container">
