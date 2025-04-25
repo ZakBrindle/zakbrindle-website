@@ -152,9 +152,14 @@ function scrollToAboutMe()
 }
 
 #music-widget button img {
-    margin-right: 15px; /* Add spacing between image and text */
-    width: 45px; /* Adjust image size as needed */
-    height: 45px;
+    margin-right: 5px; /* Add spacing between image and text */
+    width: 20px; /* Adjust image size as needed */
+    height: 20px;
+}
+
+#volume-slider {
+    width: 100px;
+    margin-left: 10px;
 }
 	</style>
 
@@ -166,6 +171,7 @@ function scrollToAboutMe()
         <img src="./play-icon.png" alt="Play">
         Listen to the podcast
     </button>
+    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5">
     <audio id="podcast-audio" src="./podcast.mp3" preload="auto"></audio>
 </div>
 
@@ -175,16 +181,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const playPauseButton = document.getElementById('play-pause-button');
     const backButton = document.getElementById('back-button');
     const podcastAudio = document.getElementById('podcast-audio');
+    const volumeSlider = document.getElementById('volume-slider');
     let isPlaying = false;
+
+    // Set initial volume
+    podcastAudio.volume = 0.5;
 
     playPauseButton.addEventListener('click', function() {
         if (!isPlaying) {
             podcastAudio.play();
-			backButton.style.display = 'block'; // Show the back button when playing
-            playPauseButton.innerHTML = '<img src="./pause-icon.png" alt="Pause">';
+            backButton.style.display = 'inline-block'; // Show the back button when playing
+            playPauseButton.innerHTML = '<img src="./pause-icon.png" alt="Pause">Pause Podcast';
         } else {
             podcastAudio.pause();
-			backButton.style.display = 'none'; // Hide the back button when paused
+            backButton.style.display = 'none'; // Hide the back button when paused
             playPauseButton.innerHTML = '<img src="./play-icon.png" alt="Play">Listen to the podcast';
         }
         isPlaying = !isPlaying;
@@ -192,6 +202,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     backButton.addEventListener('click', function() {
         podcastAudio.currentTime -= 10;
+    });
+
+    volumeSlider.addEventListener('input', function() {
+        podcastAudio.volume = volumeSlider.value;
     });
 });
 </script>
