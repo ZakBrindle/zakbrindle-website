@@ -124,84 +124,113 @@ function scrollToAboutMe()
 
 
 
-	<style>
-		/* Floating Music Player Widget Styles */
-		#music-widget {
-			position: fixed;
-			bottom: 20px;
-			left: 20px;
-			background-color: #BAD3F8;
-			padding: 10px 20px;
-			border-radius: 5px;
-			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-			z-index: 1000;
-			cursor: pointer;
-			display: flex;
-			align-items: center;
-		}
-		
-		#music-widget button {
-			background: none;
-			border: none;
-			padding: 0;
-			font-size: 14px;
-			cursor: pointer;
-			display: flex;
-			align-items: center;
-			margin: 0 5px;
-			color: #444;
-		}
-		
-		#music-widget button img {
-			margin-right: 15px;
-			width: 15px;
-			height: 15px;
-		}
-		
-		#volume-slider {
-			width: 100px;
-			margin-left: 10px;
-		}
-		
-		/* Media query for smaller screens */
-		@media (max-width: 768px) {
-			#music-widget button {
-				font-size: 9px; /* Adjust as needed */
-			}
-		}
-		
-		/* Style the volume slider's handle (thumb) */
-		#volume-slider::-webkit-slider-thumb {
-			-webkit-appearance: none; /* Override default look */
-			appearance: none;
-			width: 20px; /* Set a specific width */
-			height: 20px; /* Set a specific height */
-			background: #444; /* Set the handle color */
-			cursor: pointer; /* Add a cursor on hover */
-		}
-		
-		/* Firefox */
-		#volume-slider::-moz-range-thumb {
-			width: 20px;
-			height: 20px;
-			background: #444;
-			cursor: pointer;
-		}
-		
-		/* IE */
-		#volume-slider::-ms-thumb {
-			width: 20px;
-			height: 20px;
-			background: #444;
-			cursor: pointer;
-		}
-		</style>
+<style>
+/* Floating Music Player Widget Styles */
+#music-widget {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #7F7F7F;  
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+#music-widget button {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 0 5px;
+    color: #ebebeb;
+	font-weight: bold; 
+}
+
+#music-widget button img {
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+#volume-slider {
+    width: 100px;
+    margin-left: 10px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 568px) {
+    #music-widget button {
+        font-size: 12px; /* Adjust as needed */
+    }
+}
+
+/* Style the volume slider's track */
+#volume-slider::-webkit-slider-runnable-track {
+    background: #BAD3F8; /* Change the track color */
+    height: 5px; /* Adjust the height as needed */
+    border: none;
+}
+
+#volume-slider::-moz-range-track {
+    background: #BAD3F8; /* Change the track color */
+    height: 5px; /* Adjust the height as needed */
+    border: none;
+}
+
+/* Style the volume slider's handle (thumb) */
+#volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 20px; /* Set a specific width */
+    height: 20px; /* Set a specific height */
+    background: #444; /* Set the handle color */
+    cursor: pointer; /* Add a cursor on hover */
+}
+
+/* Firefox */
+#volume-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #444;
+    cursor: pointer;
+}
+
+/* IE */
+#volume-slider::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    background: #444;
+    cursor: pointer;
+}
+
+#volume-slider::-ms-track {
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+/* Override the fill-lower style in IE */
+#volume-slider::-ms-fill-lower {
+    background: #BAD3F8;
+}
+
+#volume-slider::-ms-fill-upper {
+    background: #BAD3F8;
+}
+</style>
 
 <div id="music-widget">
    
     <button id="play-pause-button">
         <img src="./play-icon.png" alt="Play">
-        Listen to the podcast
+        Podcast: A Tech Journey
     </button>
 	<button style="display: none;" id="back-button">
         <img src="./back-icon.png" alt="Back 10 Seconds">
