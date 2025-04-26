@@ -122,162 +122,391 @@ function scrollToAboutMe()
 
 	</header>
 
-
-
-<style>
-/* Floating Music Player Widget Styles */
-#music-widget {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background-color: #7F7F7F;  
-    padding: 10px 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-}
-
-#music-widget button {
-    background: none;
-    border: none;
-    padding: 0;
-    font-size: 16px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    margin: 0 5px;
-    color: #ebebeb;
-}
-
-#music-widget button img {
-    margin-right: 10px;
-    width: 30px;
-    height: 30px;
-}
-
-#volume-slider {
-    width: 70px;
-    margin-left: 10px;
-}
-
-/* Media query for smaller screens */
-@media (max-width: 568px) {
-    #music-widget button {
-        font-size: 12px; /* Adjust as needed */
-    }
-}
-
-/* Style the volume slider's track */
-#volume-slider::-webkit-slider-runnable-track {
-    background: #BAD3F8; /* Change the track color */
-    height: 5px; /* Adjust the height as needed */
-    border: none;
-}
-
-#volume-slider::-moz-range-track {
-    background: #BAD3F8; /* Change the track color */
-    height: 5px; /* Adjust the height as needed */
-    border: none;
-}
-
-/* Style the volume slider's handle (thumb) */
-#volume-slider::-webkit-slider-thumb {
-	-webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    background: #444; /* Change this color in the next step */
-    cursor: pointer;
-    margin-top: -6.9px; /* Adjust this value if needed */
-	
-}
-
-/* Firefox */
-#volume-slider::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
-    background: #444;
-    cursor: pointer;
-}
-
-/* IE */
-#volume-slider::-ms-thumb {
-    width: 20px;
-    height: 20px;
-    background: #444;
-    cursor: pointer;
-}
-
-#volume-slider::-ms-track {
-    background: transparent;
-    border-color: transparent;
-    color: transparent;
-}
-
-/* Override the fill-lower style in IE */
-#volume-slider::-ms-fill-lower {
-    background: #BAD3F8;
-}
-
-#volume-slider::-ms-fill-upper {
-    background: #BAD3F8;
-}
-</style>
-
-<!-- Floating Music Player Widget -->
-<div id="music-widget">
-   
-    <button id="play-pause-button">
-        <img src="./play-icon.png" alt="Play">
-        Listen to the podcast
-    </button>
-	<button style="display: none;" id="back-button">
-        <img style="padding-top:-2px" src="./back-icon.png" alt="Back 10 Seconds">
-    </button>
-    <input style="display: none;" type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5">
-
-    <audio id="podcast-audio" src="./podcast.mp3" preload="auto"></audio>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const musicWidget = document.getElementById('music-widget');
-    const playPauseButton = document.getElementById('play-pause-button');
-    const backButton = document.getElementById('back-button');
-    const podcastAudio = document.getElementById('podcast-audio');
-    const volumeSlider = document.getElementById('volume-slider');
-    let isPlaying = false;
-
-    // Set initial volume
-    podcastAudio.volume = 0.5;
-
-    playPauseButton.addEventListener('click', function() {
-        if (!isPlaying) {
-            podcastAudio.play();
-            backButton.style.display = 'inline-block'; // Show the back button when playing
-			volumeSlider.style.display = 'inline-block'; // Show the volume slider when playing
-            playPauseButton.innerHTML = '<img src="./pause-icon.png" alt="Pause">';
-        } else {
-            podcastAudio.pause();
-            backButton.style.display = 'none'; // Hide the back button when paused
-			volumeSlider.style.display = 'none'; // Hide the volume slider when paused
-            playPauseButton.innerHTML = '<img src="./play-icon.png" alt="Play">Listen to the podcast';
+	<style>
+        /* Floating Music Player Widget Styles */
+        #music-widget {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #7F7F7F;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            cursor: default; /* Change from pointer if widget itself isn't clickable */
+            display: flex;
+            align-items: center;
+            color: #ebebeb;
         }
-        isPlaying = !isPlaying;
-    });
 
-    backButton.addEventListener('click', function() {
-        podcastAudio.currentTime -= 10;
-    });
+        #music-widget button {
+            background: none;
+            border: none;
+            padding: 0;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            margin: 0 5px;
+            color: #ebebeb;
+        }
 
-    volumeSlider.addEventListener('input', function() {
-        podcastAudio.volume = volumeSlider.value;
-    });
-});
-</script>
+        #music-widget button img {
+            /* margin-right: 10px; Removed for specific icon buttons */
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Specific margin for text button */
+         #play-pause-button img {
+             margin-right: 10px;
+         }
+
+        #volume-slider {
+            width: 70px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+         /* Chapters Button Specific Styles */
+         #chapters-button {
+            margin-left: 10px; /* Space it from the volume slider */
+         }
+         #chapters-button img {
+             margin-right: 0; /* No text next to this icon */
+         }
+
+
+        /* Chapters List Styles */
+        #chapters-list {
+            position: fixed;
+            bottom: 75px; /* Adjust based on music-widget height + desired gap */
+            left: 20px;
+            width: 250px; /* Or adjust as needed */
+            max-height: 300px; /* Prevent it from being too tall */
+            overflow-y: auto; /* Add scroll if too many chapters */
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1001; /* Above the main widget */
+            padding: 10px;
+            display: none; /* Hidden by default */
+        }
+
+        #chapters-list button {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 8px 10px;
+            margin-bottom: 5px;
+            background-color: #e9e9e9;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 14px;
+            cursor: pointer;
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+
+         #chapters-list button:hover {
+             background-color: #dcdcdc;
+         }
+
+         #chapters-list button.active-chapter {
+             background-color: #BAD3F8; /* Highlight color */
+             color: #111;
+             font-weight: bold;
+         }
+
+
+        /* Media query for smaller screens */
+        @media (max-width: 568px) {
+            #music-widget button {
+                font-size: 12px; /* Adjust as needed */
+            }
+             #chapters-list {
+                 width: calc(100% - 40px); /* Adjust width for small screens */
+                 left: 20px;
+                 max-width: 250px; /* Optional max width */
+             }
+        }
+
+        /* Style the volume slider's track */
+        #volume-slider::-webkit-slider-runnable-track {
+            background: #BAD3F8; /* Change the track color */
+            height: 5px; /* Adjust the height as needed */
+            border: none;
+            border-radius: 3px;
+        }
+
+        #volume-slider::-moz-range-track {
+            background: #BAD3F8; /* Change the track color */
+            height: 5px; /* Adjust the height as needed */
+            border: none;
+            border-radius: 3px;
+        }
+
+        /* Style the volume slider's handle (thumb) */
+        #volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 15px; /* Slightly smaller thumb */
+            height: 15px;
+            background: #444;
+            border-radius: 50%; /* Make it round */
+            cursor: pointer;
+            margin-top: -5px; /* Adjust this value if needed */
+        }
+
+        /* Firefox */
+        #volume-slider::-moz-range-thumb {
+            width: 15px;
+            height: 15px;
+            background: #444;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+
+        /* IE */
+        #volume-slider::-ms-thumb {
+            width: 15px;
+            height: 15px;
+            background: #444;
+             border-radius: 50%;
+            cursor: pointer;
+        }
+
+        #volume-slider::-ms-track {
+            background: transparent;
+            border-color: transparent;
+            color: transparent;
+            height: 5px;
+        }
+
+        /* Override the fill-lower style in IE */
+        #volume-slider::-ms-fill-lower {
+            background: #BAD3F8;
+            border-radius: 3px;
+        }
+
+        #volume-slider::-ms-fill-upper {
+            background: #BAD3F8;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="chapters-list">
+        </div>
+
+    <div id="music-widget">
+
+        <button id="play-pause-button">
+            <img src="./play-icon.png" alt="Play">
+            Listen to the podcast
+        </button>
+        <button style="display: none;" id="back-button">
+            <img style="padding-top:-2px" src="./back-icon.png" alt="Back 10 Seconds">
+        </button>
+        <input style="display: none;" type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5">
+
+        <button id="chapters-button" title="Show Chapters">
+             <img src="./chapters-icon.png" alt="Chapters">
+         </button>
+
+        <audio id="podcast-audio" src="./podcast.mp3" preload="metadata"></audio> </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const musicWidget = document.getElementById('music-widget');
+            const playPauseButton = document.getElementById('play-pause-button');
+            const backButton = document.getElementById('back-button');
+            const podcastAudio = document.getElementById('podcast-audio');
+            const volumeSlider = document.getElementById('volume-slider');
+            const chaptersButton = document.getElementById('chapters-button'); // Get chapters button
+            const chaptersList = document.getElementById('chapters-list'); // Get chapters list container
+            let isPlaying = false;
+
+            // --- CHAPTER DATA ---
+            // !!! IMPORTANT: Replace this with your actual chapter data !!!
+            // time should be in seconds
+			const chapters = [
+                { name: "Introduction", time: 0 },                  // 00:00
+                { name: "Core Elements & OneUp Sales", time: 45 },  // 00:45
+                { name: "3D Printing Recruitment", time: 114 },     // 01:54 (1*60 + 54)
+                { name: "Software & Game Development", time: 206 }, // 03:26 (3*60 + 26)
+                { name: "Explaining Tech Effectively", time: 315 }, // 05:15 (5*60 + 15)
+                { name: "Recommendations", time: 361 },             // 06:01 (6*60 + 1)
+                { name: "Fun Facts", time: 466 },                   // 07:46 (7*60 + 46)
+                { name: "Putting it all together", time: 499 },     // 08:19 (8*60 + 19)
+                { name: "Thinking of working with Zak?", time: 539 },// 08:59 (8*60 + 59)
+                { name: "Final Thought", time: 574 }                // 09:34 (9*60 + 34)
+            ];
+            // --------------------
+
+            // Helper function to format seconds into MM:SS
+            function formatTime(totalSeconds) {
+                const minutes = Math.floor(totalSeconds / 60);
+                const seconds = Math.floor(totalSeconds % 60);
+                return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            }
+
+            // Function to create and add chapter buttons to the list
+            function populateChapters() {
+                chaptersList.innerHTML = ''; // Clear existing buttons
+                chapters.forEach((chapter, index) => {
+                    const button = document.createElement('button');
+                    button.textContent = `${chapter.name} (${formatTime(chapter.time)})`;
+                    button.dataset.time = chapter.time; // Store time in data attribute
+                    button.dataset.index = index;      // Store index for easy reference
+
+                    button.addEventListener('click', function() {
+                        const seekTime = parseFloat(this.dataset.time);
+                        podcastAudio.currentTime = seekTime;
+                        // Optionally play if paused when chapter is clicked
+                        if (podcastAudio.paused) {
+                             podcastAudio.play();
+                             updatePlayPauseButton(true); // Update button visuals
+                             isPlaying = true;
+                        }
+                        updateActiveChapter(seekTime); // Update highlight immediately
+                        chaptersList.style.display = 'none'; // Hide list after selection
+                    });
+
+                    chaptersList.appendChild(button);
+                });
+            }
+
+             // Function to update the play/pause button state and icon
+             function updatePlayPauseButton(playing) {
+                 if (playing) {
+                     backButton.style.display = 'inline-block';
+                     volumeSlider.style.display = 'inline-block';
+                     chaptersButton.style.display = 'flex'; // Also show chapters button
+                     playPauseButton.innerHTML = '<img src="./pause-icon.png" alt="Pause">';
+                 } else {
+                     backButton.style.display = 'none';
+                     volumeSlider.style.display = 'none';
+                     // Keep chapters button visible even when paused, unless you want to hide it
+                     // chaptersButton.style.display = 'none';
+                     playPauseButton.innerHTML = '<img src="./play-icon.png" alt="Play">Listen to the podcast';
+                     chaptersList.style.display = 'none'; // Hide chapters list when paused
+                 }
+             }
+
+             // Function to highlight the current chapter
+            function updateActiveChapter(currentTime) {
+                if (currentTime === undefined) { // If called by timeupdate event
+                     currentTime = podcastAudio.currentTime;
+                }
+                let activeChapterIndex = -1;
+
+                // Find the latest chapter whose start time is less than or equal to current time
+                for (let i = chapters.length - 1; i >= 0; i--) {
+                    if (currentTime >= chapters[i].time) {
+                        activeChapterIndex = i;
+                        break;
+                    }
+                }
+
+                // Update button styles
+                const chapterButtons = chaptersList.querySelectorAll('button');
+                chapterButtons.forEach((button, index) => {
+                    if (index === activeChapterIndex) {
+                        button.classList.add('active-chapter');
+                    } else {
+                        button.classList.remove('active-chapter');
+                    }
+                });
+            }
+
+
+            // --- Initialize ---
+            podcastAudio.volume = 0.5;
+            volumeSlider.value = 0.5;
+            populateChapters(); // Create the chapter buttons on load
+            chaptersButton.style.display = 'flex'; // Make chapters button always visible initially (or hide if preferred)
+
+
+            // --- Event Listeners ---
+            playPauseButton.addEventListener('click', function() {
+                if (!isPlaying) {
+                    podcastAudio.play();
+                    updatePlayPauseButton(true);
+                } else {
+                    podcastAudio.pause();
+                    updatePlayPauseButton(false);
+                }
+                isPlaying = !isPlaying;
+            });
+
+            backButton.addEventListener('click', function() {
+                podcastAudio.currentTime -= 10;
+            });
+
+            volumeSlider.addEventListener('input', function() {
+                podcastAudio.volume = volumeSlider.value;
+            });
+
+            // Toggle chapters list visibility
+             chaptersButton.addEventListener('click', function(event) {
+                 event.stopPropagation(); // Prevent click from bubbling up if needed
+                 const isChaptersVisible = chaptersList.style.display === 'block';
+                 chaptersList.style.display = isChaptersVisible ? 'none' : 'block';
+                 if (!isChaptersVisible) {
+                    // Optionally re-calculate position in case window resized
+                    const widgetRect = musicWidget.getBoundingClientRect();
+                    chaptersList.style.bottom = `${window.innerHeight - widgetRect.top + 10}px`; // 10px gap above
+                    chaptersList.style.left = `${widgetRect.left}px`;
+                    // Update highlighting when list is opened
+                    updateActiveChapter();
+                 }
+             });
+
+             // Hide chapters list if clicking outside of it
+            document.addEventListener('click', function(event) {
+                if (!chaptersList.contains(event.target) && event.target !== chaptersButton && !chaptersButton.contains(event.target)) {
+                    chaptersList.style.display = 'none';
+                }
+            });
+
+
+            // Update current chapter highlighting as audio plays
+             podcastAudio.addEventListener('timeupdate', () => updateActiveChapter());
+
+             // Also handle audio ending
+             podcastAudio.addEventListener('ended', function() {
+                 updatePlayPauseButton(false);
+                 isPlaying = false;
+                 podcastAudio.currentTime = 0; // Reset to beginning (optional)
+                 updateActiveChapter(0); // Reset highlight
+             });
+
+             // Handle potential errors during loading/playback
+             podcastAudio.addEventListener('error', function(e) {
+                 console.error("Audio Error:", e);
+                 // Maybe display an error message to the user
+             });
+
+              // Ensure initial UI state matches audio state if it autoplays or is pre-set
+             if (!podcastAudio.paused) {
+                 isPlaying = true;
+                 updatePlayPauseButton(true);
+             } else {
+                 isPlaying = false;
+                 updatePlayPauseButton(false);
+             }
+              // Initial chapter highlight check (in case audio starts at non-zero time)
+             podcastAudio.addEventListener('loadedmetadata', () => {
+                updateActiveChapter();
+             });
+
+
+        });
+    </script>
 
 	<div id="fh5co-services" class="fh5co-bg-section">
 		<div class="container">
