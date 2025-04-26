@@ -173,7 +173,8 @@ function scrollToAboutMe()
             margin-left: 10px; /* Space it from the volume slider */
          }
          #chapters-button img {
-             margin-right: 0; /* No text next to this icon */
+             margin-right: -5px; /* No text next to this icon */
+			 margin-left: 5px;
          }
 
 
@@ -185,8 +186,8 @@ function scrollToAboutMe()
             width: 250px; /* Or adjust as needed */
             max-height: 300px; /* Prevent it from being too tall */
             overflow-y: auto; /* Add scroll if too many chapters */
-            background-color: #7F7F7F;
-            border: 1px solid #727272;
+            background-color: #d4d4d4;
+            border: 1px solid #ccc;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             z-index: 1001; /* Above the main widget */
@@ -200,9 +201,9 @@ function scrollToAboutMe()
             text-align: left;
             padding: 8px 10px;
             margin-bottom: 5px;
-            background-color: #bebebe;
+            background-color: #e9e9e9;
             color: #333;
-            border: 1px solid #6e6e6e;
+            border: 1px solid #ddd;
             border-radius: 3px;
             font-size: 14px;
             cursor: pointer;
@@ -210,11 +211,11 @@ function scrollToAboutMe()
         }
 
          #chapters-list button:hover {
-             background-color: #bcc8da;
+             background-color: #d1e3fd;
          }
 
          #chapters-list button.active-chapter {
-             background-color: #C5DEFD; /* Highlight color */
+             background-color: #BAD3F8; /* Highlight color */
              color: #111;
              font-weight: bold;
          }
@@ -333,7 +334,7 @@ function scrollToAboutMe()
             // --- CHAPTER DATA ---
             // !!! IMPORTANT: Replace this with your actual chapter data !!!
             // time should be in seconds
-			const chapters = [
+             const chapters = [
                 { name: "Introduction", time: 0 },                  // 00:00
                 { name: "Core Elements & OneUp Sales", time: 45 },  // 00:45
                 { name: "3D Printing Recruitment", time: 114 },     // 01:54 (1*60 + 54)
