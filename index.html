@@ -519,6 +519,8 @@ function scrollToAboutMe()
     // Get the element once the DOM is ready
     const downloadCvButton = document.getElementById('downloadCV');
 
+	var displayOnLoad = downloadCvButton.style.display;
+
     // Function to check width and set display
     function checkWidthAndSetDisplay() {
         // Check if the element actually exists before trying to style it
@@ -526,7 +528,7 @@ function scrollToAboutMe()
             if (window.innerWidth <= 568) {
                 downloadCvButton.style.display = 'none';
             } else {
-                downloadCvButton.style.display = 'block'; // Or 'inline', 'flex', etc., depending on what it should be when visible
+                downloadCvButton.style.display = displayOnLoad; // Or 'inline', 'flex', etc., depending on what it should be when visible
             }
         } else {
             console.error("Element with ID 'downloadCV' not found."); // Log error if element doesn't exist
