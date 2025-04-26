@@ -127,42 +127,75 @@ function scrollToAboutMe()
 	<style>
 		/* Floating Music Player Widget Styles */
 		#music-widget {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background-color: rgba(65, 65, 65, 0.8); /* Semi-transparent white */
-    padding: 10px 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1000; /* Ensure it stays on top of other content */
-    cursor: pointer;
-    display: flex; /* Use flexbox to align items */
-    align-items: center; /* Vertically center items */
-}
-
-#music-widget button {
-    background: none;
-    border: none;
-    padding: 0;
-    font-size: 22px;
-    cursor: pointer;
-	color: whitesmoke;
-    display: flex; /* Use flexbox to align items */
-    align-items: center; /* Vertically center items */
-    margin: 0 5px; /* Add some spacing between buttons */
-}
-
-#music-widget button img {
-    margin-right: 5px; /* Add spacing between image and text */
-    width: 40px; /* Adjust image size as needed */
-    height: 40px;
-}
-
-#volume-slider {
-    width: 60px;
-    margin-left: 10px;
-}
-	</style>
+			position: fixed;
+			bottom: 20px;
+			left: 20px;
+			background-color: #BAD3F8;
+			padding: 10px 20px;
+			border-radius: 5px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+			z-index: 1000;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+		}
+		
+		#music-widget button {
+			background: none;
+			border: none;
+			padding: 0;
+			font-size: 14px;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			margin: 0 5px;
+			color: #444;
+		}
+		
+		#music-widget button img {
+			margin-right: 15px;
+			width: 15px;
+			height: 15px;
+		}
+		
+		#volume-slider {
+			width: 100px;
+			margin-left: 10px;
+		}
+		
+		/* Media query for smaller screens */
+		@media (max-width: 768px) {
+			#music-widget button {
+				font-size: 9px; /* Adjust as needed */
+			}
+		}
+		
+		/* Style the volume slider's handle (thumb) */
+		#volume-slider::-webkit-slider-thumb {
+			-webkit-appearance: none; /* Override default look */
+			appearance: none;
+			width: 20px; /* Set a specific width */
+			height: 20px; /* Set a specific height */
+			background: #444; /* Set the handle color */
+			cursor: pointer; /* Add a cursor on hover */
+		}
+		
+		/* Firefox */
+		#volume-slider::-moz-range-thumb {
+			width: 20px;
+			height: 20px;
+			background: #444;
+			cursor: pointer;
+		}
+		
+		/* IE */
+		#volume-slider::-ms-thumb {
+			width: 20px;
+			height: 20px;
+			background: #444;
+			cursor: pointer;
+		}
+		</style>
 
 <div id="music-widget">
    
