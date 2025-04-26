@@ -515,14 +515,31 @@ function scrollToAboutMe()
         });
 
 
-		if (window.innerWidth <= 568) {
-        document.getElementById('downloadCV').style.display = 'none';
+		document.addEventListener('DOMContentLoaded', function() {
+    // Get the element once the DOM is ready
+    const downloadCvButton = document.getElementById('downloadCV');
+
+    // Function to check width and set display
+    function checkWidthAndSetDisplay() {
+        // Check if the element actually exists before trying to style it
+        if (downloadCvButton) {
+            if (window.innerWidth <= 568) {
+                downloadCvButton.style.display = 'none';
+            } else {
+                downloadCvButton.style.display = 'block'; // Or 'inline', 'flex', etc., depending on what it should be when visible
+            }
+        } else {
+            console.error("Element with ID 'downloadCV' not found."); // Log error if element doesn't exist
+        }
     }
-	else
-	{
-		document.getElementById('downloadCV').style.display = 'block';
-	}
-	
+
+    // Run the check when the page finishes loading
+    checkWidthAndSetDisplay();
+
+    // Add an event listener to run the check whenever the window is resized
+    window.addEventListener('resize', checkWidthAndSetDisplay);
+});
+
     </script>
 
 	<div id="fh5co-services" class="fh5co-bg-section">
