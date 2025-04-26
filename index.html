@@ -222,7 +222,7 @@ function scrollToAboutMe()
 
 
         /* Media query for smaller screens */
-        @media (max-width: 568px) {
+		@media (max-width: 568px) {
             #music-widget button {
                 font-size: 12px; /* Adjust as needed */
             }
@@ -230,6 +230,10 @@ function scrollToAboutMe()
                  width: calc(100% - 40px); /* Adjust width for small screens */
                  left: 20px;
                  max-width: 250px; /* Optional max width */
+             }
+             #downloadCV {
+                 font-size: 12px;
+                 width: 70px;
              }
         }
 
@@ -321,6 +325,23 @@ function scrollToAboutMe()
         <audio id="podcast-audio" src="./podcast.mp3" preload="metadata"></audio> </div>
 
     <script>
+
+if (window.innerWidth <= 568) {
+        document.getElementById('downloadCV').textContent = 'CV';
+    }
+	else
+	{
+		document.getElementById('downloadCV').textContent = 'Download CV';
+	}
+
+
+	if (window.innerWidth <= 568) {
+		document.getElementById('play-pause-button').textContent = 'Play Podcast';
+	} else {
+		document.getElementById('play-pause-button').textContent = 'Listen to the podcast';
+	}
+
+
         document.addEventListener('DOMContentLoaded', function() {
             const musicWidget = document.getElementById('music-widget');
             const playPauseButton = document.getElementById('play-pause-button');
