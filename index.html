@@ -327,19 +327,13 @@ function scrollToAboutMe()
     <script>
 
 if (window.innerWidth <= 568) {
-        document.getElementById('downloadCV').textContent = 'CV';
+        document.getElementById('downloadCV').style.display = 'none';
     }
 	else
 	{
-		document.getElementById('downloadCV').textContent = 'Download CV';
+		document.getElementById('downloadCV').style.display = 'block';
 	}
 
-
-	if (window.innerWidth <= 568) {
-		document.getElementById('play-pause-button').textContent = 'Play Podcast';
-	} else {
-		document.getElementById('play-pause-button').textContent = 'Listen to the podcast';
-	}
 
 
         document.addEventListener('DOMContentLoaded', function() {
