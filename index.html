@@ -231,10 +231,7 @@ function scrollToAboutMe()
                  left: 20px;
                  max-width: 250px; /* Optional max width */
              }
-             #downloadCV {
-                 font-size: 12px;
-                 width: 70px;
-             }
+           
         }
 
         /* Style the volume slider's track */
@@ -326,13 +323,7 @@ function scrollToAboutMe()
 
     <script>
 
-if (window.innerWidth <= 568) {
-        document.getElementById('downloadCV').style.display = 'none';
-    }
-	else
-	{
-		document.getElementById('downloadCV').style.display = 'block';
-	}
+
 
 
 
@@ -522,6 +513,16 @@ if (window.innerWidth <= 568) {
 
 
         });
+
+
+		if (window.innerWidth <= 568) {
+        document.getElementById('downloadCV').style.display = 'none';
+    }
+	else
+	{
+		document.getElementById('downloadCV').style.display = 'block';
+	}
+	
     </script>
 
 	<div id="fh5co-services" class="fh5co-bg-section">
