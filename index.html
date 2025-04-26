@@ -144,13 +144,12 @@ function scrollToAboutMe()
     background: none;
     border: none;
     padding: 0;
-    font-size: 15px;
+    font-size: 16px;
     cursor: pointer;
     display: flex;
     align-items: center;
     margin: 0 5px;
     color: #ebebeb;
-	font-weight: bold; 
 }
 
 #music-widget button img {
@@ -186,12 +185,14 @@ function scrollToAboutMe()
 
 /* Style the volume slider's handle (thumb) */
 #volume-slider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
+	-webkit-appearance: none;
     appearance: none;
-    width: 20px; /* Set a specific width */
-    height: 20px; /* Set a specific height */
-    background: #444; /* Set the handle color */
-    cursor: pointer; /* Add a cursor on hover */
+    width: 20px;
+    height: 20px;
+    background: #444; /* Change this color in the next step */
+    cursor: pointer;
+    margin-top: -7.5px; /* Adjust this value if needed */
+	
 }
 
 /* Firefox */
@@ -226,11 +227,12 @@ function scrollToAboutMe()
 }
 </style>
 
+<!-- Floating Music Player Widget -->
 <div id="music-widget">
    
     <button id="play-pause-button">
         <img src="./play-icon.png" alt="Play">
-        Podcast: A Tech Journey
+        Listen to the podcast
     </button>
 	<button style="display: none;" id="back-button">
         <img src="./back-icon.png" alt="Back 10 Seconds">
